@@ -6,7 +6,15 @@ $(document).ready(function() {
   });
 
   $('.memo-write').click(function() {
-    var content = $('.memo.memo-new > textarea').val();
-    alert(content);
+    var $text = $('.memo.memo-new > textarea')
+    var content = $text.val();
+    if (content) {
+      $text.val('').trigger('autosize.resize');
+      $.ajax({
+        type: "POST",
+        url: "/",
+        data: content,
+      });
+    }
   });
 });
