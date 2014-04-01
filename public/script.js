@@ -12,7 +12,7 @@ $(document).ready(function() {
       $text.val('').trigger('autosize.resize');
       $.ajax({
         type: "POST",
-        url: "/",
+        url: "/articles/",
         data: content,
       });
     }

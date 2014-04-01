@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sequel'
+require 'json'
 
 DB = Sequel.sqlite
 DB.create_table :articles do
@@ -12,7 +13,12 @@ get '/' do
   send_file 'main.html'
 end
 
-post '/' do
+get '/articles/' do
+  content_type :json
+  articles.all.to_json
+end
+
+post '/articles/' do
   content = request.body.read
   if !content.empty?
     articles.insert content: content
