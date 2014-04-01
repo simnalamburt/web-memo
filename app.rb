@@ -1,11 +1,7 @@
 require 'sinatra'
 require 'sequel'
 
-DB = Sequel.sqlite
-DB.create_table :articles do
-  primary_key :id
-  String :content
-end
+DB = Sequel.sqlite('data.db')
 articles = DB[:articles]
 
 get '/' do
