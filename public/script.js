@@ -1,8 +1,6 @@
 $(document).ready(function() {
-  $('textarea').autosize();
-  
-  $('.memo-new').click(function() {
-    $('.memo-new > textarea').focus();
+  $('.memo').click(function() {
+    $('textarea', this).autosize().focus();
   });
 
   $.get('/articles/', function(data) {

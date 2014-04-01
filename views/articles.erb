@@ -1,5 +1,7 @@
 <% @data.each do |entity| %>
-  <output name="<%= entity[:id] %>">
-    <pre class="memo"><%= entity[:content] %></pre>
-  </output>
+<output name="<%= entity[:id] %>">
+  <div class="memo">
+    <textarea><%= entity[:content] %></textarea>
+  </div>
+</output>
 <% end %>
