@@ -1,14 +1,14 @@
-Hyeonme 프로토타입
+[normal]memo
 =====
 
-hyeon.me 에 만들 개인블로그 프로토타입
+간단한 웹기반 메모 프로그램
 
 ### Installation
 
 1.  Clone the repository
 
     ```
-    git clone git@github.com:simnalamburt/hyeonme.git
+    git clone http://git.likelion.net/normal/memo.git
     ```
 
 2.  Install required gems
