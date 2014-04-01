@@ -5,15 +5,19 @@ $(document).ready(function() {
     $('.memo-new > textarea').focus();
   });
 
+  $.get('/articles/', function(data) {
+    $('.result').html(data);
+  });
+
   $('.memo-write').click(function() {
     var $text = $('.memo.memo-new > textarea')
     var content = $text.val();
     if (content) {
       $text.val('').trigger('autosize.resize');
-      $.ajax({
-        type: "POST",
-        url: "/articles/",
-        data: content,
+      $.post('/articles/', content, function() {
+        $.get('/articles/', function(data) {
+          $('.result').html(data);
+        });
       });
     }
   });

@@ -1,0 +1,5 @@
+<% @data.each do |entity| %>
+  <output name="<%= entity[:id] %>">
+    <pre class="memo"><%= entity[:content] %></pre>
+  </output>
+<% end %>

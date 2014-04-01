@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sequel'
-require 'json'
 
 DB = Sequel.sqlite
 DB.create_table :articles do
@@ -10,12 +9,12 @@ end
 articles = DB[:articles]
 
 get '/' do
-  send_file 'main.html'
+  erb :main
 end
 
 get '/articles/' do
-  content_type :json
-  articles.all.to_json
+  @data = articles.all
+  erb :articles
 end
 
 post '/articles/' do
