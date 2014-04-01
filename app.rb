@@ -18,11 +18,6 @@ get '/articles/' do
 end
 
 post '/articles/' do
-  content = request.body.read
-  if !content.empty?
-    articles.insert content: content
-    return 200
-  else
-    return 400
-  end
+  articles.insert content: request.body.read
+  return 200
 end

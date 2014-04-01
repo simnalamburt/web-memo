@@ -2,31 +2,32 @@ html, body { height: 100%; }
 
 .container {
   min-height: 100%;
+  padding-bottom: 20px;
   background-color: lightgray;
   box-shadow: 0 0 15px lightgray;
 }
 
+.write {
+  width: 70%;
+  margin: 10px auto 20px auto;
+}
+.write > div {
+  text-align: right;
+  padding-right: 20px;
+}
+
 .memo {
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
 }
 .memo > textarea {
   width: 100%;
   overflow: hidden;
   background-color: transparent;
-  border-width: 0;
+  border: 0;
   outline: none;
   resize: none;
   transition: height 0.2s;
-}
-
-.memo.memo-new {
-  width: 70%;
-  margin: 10px auto 20px auto;
-}
-.memo.memo-new > div {
-  text-align: right;
-  padding-right: 20px;
 }

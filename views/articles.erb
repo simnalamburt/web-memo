@@ -1,7 +1,5 @@
-<% @data.each do |entity| %>
-<output name="<%= entity[:id] %>">
-  <div class="memo">
+<% @data.reverse_each do |entity| %>
+  <div class="memo" id="<%= entity[:id] %>">
     <textarea><%= entity[:content] %></textarea>
   </div>
-</output>
 <% end %>

@@ -1,22 +1,23 @@
 $(document).ready(function() {
   $('.memo').click(function() {
-    $('textarea', this).autosize().focus();
+    $('textarea', this).focus();
   });
 
-  $.get('/articles/', function(data) {
-    $('.result').html(data);
-  });
+  $('.memo > textarea').autosize();
 
-  $('.memo-write').click(function() {
-    var $text = $('.memo.memo-new > textarea')
+  var update = function() {
+    $.get('/articles/', function(data) {
+      $('.result').html(data);
+      $('.memo > textarea').autosize();
+    });
+  };
+  
+  update();
+
+  $('.write a').click(function() {
+    var $text = $('.write textarea')
     var content = $text.val();
-    if (content) {
-      $text.val('').trigger('autosize.resize');
-      $.post('/articles/', content, function() {
-        $.get('/articles/', function(data) {
-          $('.result').html(data);
-        });
-      });
-    }
+    $text.val('').trigger('autosize.resize');
+    $.post('/articles/', content, update);
   });
 });
