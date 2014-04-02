@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('.memo').click(function() {
+  // It let users click textarea easier
+  $('.write, .result').on('click', '.memo', function() {
     $('textarea', this).focus();
   });
 

@@ -32,14 +32,13 @@ get '/' do
 end
 
 get '/articles/' do
-  @data = Article.all
-  erb :articles
+  erb :articles, locals: { data: Article.all }
 end
 
 post '/articles/' do
-  entity = Article.new
-  entity.content = request.body.read
-  entity.save
+  Article.create do |entity|
+    entity.content = request.body.read
+  end
   return 200
 end
 
