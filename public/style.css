@@ -1,43 +1,71 @@
-html, body { height: 100%; }
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+html, body {
+  height: 100%;
+  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif;
+  background-image: url('bkground.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .container {
   min-height: 100%;
   padding-bottom: 20px;
-  background-color: lightgray;
-  box-shadow: 0 0 15px lightgray;
 }
 
 textarea {
   width: 100%;
+  height: 40px;
   border: 8px solid transparent;
   padding: 4px;
   
-  background-color: white;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
-  transition: border-color 0.2s, height 0.2s;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.08);
+  transition:
+    border-color 0.2s,
+    height 0.2s,
+    min-height 0.2s;
   
   resize: none;
   outline: none;
   overflow: hidden;
 }
-textarea:focus {
-  border-color: rgba(0, 0, 0, 0.05);
-}
 
 .write {
   position: relative;
-  width: 70%;
-  margin: 10px auto 20px auto;
+  width: 50%;
+  margin: 40px auto 30px auto;
 }
 .write > textarea {
-  min-height: 100px;
+  height: 60px;
 }
+.write > textarea:focus { min-height: 200px; }
+.write > textarea::-webkit-input-placeholder { font-size: 1.5em; transition: color 0.2s; }
+.write > textarea::-moz-placeholder          { font-size: 1.5em; transition: color 0.2s; }
+.write > textarea:-ms-input-placeholder      { font-size: 1.5em; transition: color 0.2s; }
+.write > textarea:focus::-webkit-input-placeholder { color: transparent; }
+.write > textarea:focus::-moz-placeholder          { color: transparent; }
+.write > textarea:focus:-ms-input-placeholder      { color: transparent; }
 .write > a {
   position: absolute;
   right: 30px;
-  bottom: 20px;
+  bottom: 23px;
 }
 
+.result {
+  padding: 0 20px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
 .result > textarea {
   margin: 5px 0;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
 }
+.result > textarea:focus { border-color: rgba(0, 0, 0, 0.05); }
