@@ -1,19 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-html, body {
-  height: 100%;
-  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif;
-  background-image: url('bkground.jpg');
+html, body { height: 100%; }
+html {
+  background: url('bkground.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
+body {
+  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif;
+  background: linear-gradient(to bottom, white 100px, transparent 700px);
+}
 
 .container {
   min-height: 100%;
+  padding-top: 130px;
   padding-bottom: 20px;
+  text-align: center;
+}
+
+.container > img {
+  width: 500px;
 }
 
 textarea {
@@ -21,9 +30,9 @@ textarea {
   height: 40px;
   border: 8px solid transparent;
   padding: 4px;
+  font-size: 1.2em;
   
   background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.08);
   transition:
     border-color 0.2s,
     height 0.2s,
@@ -37,10 +46,11 @@ textarea {
 .write {
   position: relative;
   width: 50%;
-  margin: 40px auto 30px auto;
+  margin: 40px auto 80px auto;
 }
 .write > textarea {
   height: 60px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .write > textarea:focus { min-height: 200px; }
 .write > textarea::-webkit-input-placeholder { font-size: 1.5em; transition: color 0.2s; }
@@ -53,6 +63,7 @@ textarea {
   position: absolute;
   right: 30px;
   bottom: 23px;
+  color: #1abc9c;
 }
 
 .result {
