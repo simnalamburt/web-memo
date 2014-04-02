@@ -21,4 +21,12 @@ $(document).ready(function() {
     $text.val('').trigger('autosize.resize');
     $.post('/articles/', content, update);
   });
+
+  $('.result').on('blur', 'textarea', function() {
+    $.ajax({
+      type: 'PUT',
+      url: '/articles/' + $(this).attr('id'),
+      data: $(this).val(),
+    });
+  });
 });

@@ -1,5 +1,5 @@
 <% data.reverse_each do |entity| %>
-  <div class="memo" id="<%= entity.id %>">
-    <textarea><%= entity.content %></textarea>
+  <div class="memo">
+    <textarea id="<%= entity.id %>"><%= entity.content %></textarea>
   </div>
 <% end %>
