@@ -7,27 +7,37 @@ html, body { height: 100%; }
   box-shadow: 0 0 15px lightgray;
 }
 
+textarea {
+  width: 100%;
+  border: 8px solid transparent;
+  padding: 4px;
+  
+  background-color: white;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.2s, height 0.2s;
+  
+  resize: none;
+  outline: none;
+  overflow: hidden;
+}
+textarea:focus {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
 .write {
+  position: relative;
   width: 70%;
   margin: 10px auto 20px auto;
 }
-.write > div {
-  text-align: right;
-  padding-right: 20px;
+.write > textarea {
+  min-height: 100px;
+}
+.write > a {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
 }
 
-.memo {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
-}
-.memo > textarea {
-  width: 100%;
-  overflow: hidden;
-  background-color: transparent;
-  border: 0;
-  outline: none;
-  resize: none;
-  transition: height 0.2s;
+.result > textarea {
+  margin: 5px 0;
 }
