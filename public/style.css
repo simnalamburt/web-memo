@@ -56,12 +56,12 @@ textarea {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .write > textarea:focus { min-height: 200px; }
-.write > textarea::-webkit-input-placeholder { position: relative; left: 210px; top: 0px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, top 0.2s; }
-.write > textarea::-moz-placeholder          { position: relative; left: 210px; top: 0px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, top 0.2s; }
-.write > textarea:-ms-input-placeholder      { position: relative; left: 210px; top: 0px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, top 0.2s; }
-.write > textarea:focus::-webkit-input-placeholder { color: transparent; top: 200px; }
-.write > textarea:focus::-moz-placeholder          { color: transparent; top: 200px; }
-.write > textarea:focus:-ms-input-placeholder      { color: transparent; top: 200px; }
+.write > textarea::-webkit-input-placeholder { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
+.write > textarea::-moz-placeholder          { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
+.write > textarea:-ms-input-placeholder      { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
+.write > textarea:focus::-webkit-input-placeholder { color: transparent; left: 700px; }
+.write > textarea:focus::-moz-placeholder          { color: transparent; left: 700px; }
+.write > textarea:focus:-ms-input-placeholder      { color: transparent; left: 700px; }
 .write > a {
   position: absolute;
   right: 30px;
