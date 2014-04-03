@@ -22,7 +22,7 @@ $(document).ready(function() {
   update();
 
   // CREATE : When the user clicks the write button
-  $('.write > a').click(function() {
+  $('.write > textarea').blur(function() {
     var $text = $('.write > textarea')
     var content = $text.val();
     $text.val('').trigger('autosize.resize');
