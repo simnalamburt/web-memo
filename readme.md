@@ -25,6 +25,19 @@
     # Listening on 0.0.0.0:4567 ...
     ```
 
+### Backup
+
+*   Making a new backup
+    ```
+    ./make_backup.sh
+    # * 백업 완료! (data.db -> backups/data.db_YYMMDD_HHMM)
+    ```
+
+*   Reverting to the old backup
+    ```
+    cp backups/data.db_YYMMDD_HHMM data.db
+    ```
+
 ### Requirements
 
 * Ubuntu 12.04 or higher

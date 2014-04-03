@@ -54,4 +54,5 @@ build/
 
 
 ### Custom ###
-data.db
+/data.db
+/backups/
