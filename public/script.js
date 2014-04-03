@@ -6,6 +6,7 @@ $(document).ready(function() {
 
   $('textarea').autosize();
 
+  // READ
   var update = function() {
     $.ajax({
       type: 'GET',
@@ -20,7 +21,7 @@ $(document).ready(function() {
   
   update();
 
-  // When the user clicks the write button
+  // CREATE : When the user clicks the write button
   $('.write > a').click(function() {
     var $text = $('.write > textarea')
     var content = $text.val();
@@ -34,7 +35,7 @@ $(document).ready(function() {
     });
   });
 
-  // When the user finished updating the memo
+  // UPDATE : When the user finished updating the memo
   $('.result').on('blur', 'textarea', function() {
     $.ajax({
       type: 'PUT',
@@ -43,7 +44,7 @@ $(document).ready(function() {
     });
   });
 
-  // When the user clicks the delete memo button
+  // DELETE : When the user clicks the delete memo button
   $('.result').on('click', 'button', function() {
     $.ajax({
       type: 'DELETE',

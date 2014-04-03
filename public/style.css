@@ -5,24 +5,12 @@ html, body { height: 100%; }
 html {
   background: url('bkground.jpg');
   background-position: center center;
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 body {
   font-family: 'Titillium Web', 'Nanum Gothic', sans-serif;
-  background: linear-gradient(to bottom, white 100px, transparent 700px);
-}
-
-.container {
-  min-height: 100%;
-  padding-top: 130px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.container > img {
-  width: 500px;
+  background: linear-gradient(to bottom, white 100px, transparent 700px); 
 }
 
 textarea {
@@ -37,10 +25,16 @@ textarea {
   overflow: hidden;
 
   background-color: rgba(255, 255, 255, 0.95);
-  transition:
-    border-color 0.2s,
-    height 0.2s,
-    min-height 0.2s;
+}
+
+.container {
+  min-height: 100%;
+  padding-top: 130px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.container > img {
+  width: 500px;
 }
 
 .write {
@@ -54,6 +48,10 @@ textarea {
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+
+  transition:
+    height 0.2s,
+    min-height 0.2s;
 }
 .write > textarea:focus { min-height: 200px; }
 .write > textarea::-webkit-input-placeholder { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
@@ -71,12 +69,12 @@ textarea {
 
 .result {
   padding: 0 20px;
+          column-count: 3;
+     -moz-column-count: 3;  
   -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
+          column-gap: 20px;
+     -moz-column-gap: 20px;
   -webkit-column-gap: 20px;
-  -moz-column-gap: 20px;
-  column-gap: 20px;
 }
 .result > div {
   width: 100%;
@@ -88,6 +86,11 @@ textarea {
   border: 8px solid transparent;
   padding: 4px;
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+
+  transition:
+    height 0.2s,
+    min-height 0.2s,
+    border-color 0.2s;
 }
 .result > div > textarea:focus { border-color: rgba(0, 0, 0, 0.05); }
 .result > div > button {

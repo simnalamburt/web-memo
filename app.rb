@@ -3,7 +3,7 @@ require 'sequel'
 
 
 
-### Define Model
+### Model
 DB = Sequel.sqlite('data.db')
 
 Sequel::Model.plugin(:schema)
@@ -26,7 +26,7 @@ end
 
 
 
-### Routes
+### Controller
 get '/' do
   erb :main
 end
@@ -39,7 +39,7 @@ post '/memos/' do
   Memo.create do |memo|
     memo.content = request.body.read
   end
-  return 200
+  200
 end
 
 put '/memos/:id' do
@@ -49,10 +49,10 @@ put '/memos/:id' do
     memo.content = request.body.read
     memo.save
   end
-  return 200
+  200
 end
 
 delete '/memos/:id' do
   Memo[params[:id]].destroy
-  return 200
+  200
 end

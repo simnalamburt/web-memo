@@ -1,7 +1,7 @@
 [normal]memo
 =====
 
-간단한 웹기반 메모 프로그램
+간단한 웹기반 메모 서비스
 
 ### Installation
 
