@@ -7,19 +7,19 @@ require 'sequel'
 DB = Sequel.sqlite('data.db')
 
 Sequel::Model.plugin(:schema)
-class Article < Sequel::Model
+class Memo < Sequel::Model
   set_schema do
     primary_key :id
     String :content
   end
 end
 
-unless Article.table_exists?
-  Article.create_table
-  Article.create do |entity|
+unless Memo.table_exists?
+  Memo.create_table
+  Memo.create do |entity|
     entity.content = "Hello, World!\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in bibendum lorem. In viverra erat ipsum, id pretium urna vehicula ut. Proin vel quam ultricies, placerat urna ut, accumsan leo. Vivamus laoreet vestibulum nulla non dictum. Vestibulum non nisl quis risus dictum vestibulum hendrerit ut diam. Sed eget laoreet augue. Integer pulvinar massa scelerisque rhoncus consequat. Vivamus velit mi, suscipit bibendum tincidunt quis, pulvinar a ante."
   end
-  Article.create do |entity|
+  Memo.create do |entity|
     entity.content = '"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."'
   end
 end
@@ -31,28 +31,28 @@ get '/' do
   erb :main
 end
 
-get '/articles/' do
-  erb :articles, locals: { data: Article.all }
+get '/memos/' do
+  erb :memos, locals: { data: Memo.all }
 end
 
-post '/articles/' do
-  Article.create do |entity|
-    entity.content = request.body.read
+post '/memos/' do
+  Memo.create do |memo|
+    memo.content = request.body.read
   end
   return 200
 end
 
-put '/articles/:id' do
+put '/memos/:id' do
   DB.transaction do
-    entity = Article[params[:id]]
-    entity.lock!
-    entity.content = request.body.read
-    entity.save
+    memo = Memo[params[:id]]
+    memo.lock!
+    memo.content = request.body.read
+    memo.save
   end
   return 200
 end
 
-delete '/articles/:id' do
-  Article[params[:id]].destroy
+delete '/memos/:id' do
+  Memo[params[:id]].destroy
   return 200
 end

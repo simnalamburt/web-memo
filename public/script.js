@@ -9,7 +9,7 @@ $(document).ready(function() {
   var update = function() {
     $.ajax({
       type: 'GET',
-      url:  '/articles/',
+      url:  '/memos/',
       success: function(data) {
         $('.result')
         .html(data)
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url:  '/articles/',
+      url:  '/memos/',
       data: content,
       success: update,
     });
@@ -38,7 +38,7 @@ $(document).ready(function() {
   $('.result').on('blur', 'textarea', function() {
     $.ajax({
       type: 'PUT',
-      url:  '/articles/' + $(this).parent().attr('id'),
+      url:  '/memos/' + $(this).parent().attr('id'),
       data: $(this).val(),
     });
   });
@@ -47,7 +47,7 @@ $(document).ready(function() {
   $('.result').on('click', 'button', function() {
     $.ajax({
       type: 'DELETE',
-      url:  '/articles/' + $(this).parent().attr('id'),
+      url:  '/memos/' + $(this).parent().attr('id'),
       success: update,
     });
   });
