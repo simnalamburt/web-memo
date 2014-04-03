@@ -13,7 +13,7 @@ $(document).ready(function() {
       success: function(data) {
         $('.result')
         .html(data)
-        .children('textarea').autosize();
+        .find('textarea').autosize();
       }
     });
   };

@@ -30,6 +30,7 @@ textarea {
   height: 40px;
   font-size: 1.2em;
   
+  display: block;
   border: none;
   resize: none;
   outline: none;
@@ -64,7 +65,7 @@ textarea {
 .write > a {
   position: absolute;
   right: 30px;
-  bottom: 23px;
+  bottom: 18px;
   color: #1abc9c;
 }
 
@@ -77,10 +78,20 @@ textarea {
   -moz-column-gap: 20px;
   column-gap: 20px;
 }
-.result > textarea {
+.result > div {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+.result > div > textarea {
   margin: 5px 0;
   border: 8px solid transparent;
   padding: 4px;
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
 }
-.result > textarea:focus { border-color: rgba(0, 0, 0, 0.05); }
+.result > div > textarea:focus { border-color: rgba(0, 0, 0, 0.05); }
+.result > div > button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
