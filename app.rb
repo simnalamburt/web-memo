@@ -51,3 +51,8 @@ put '/articles/:id' do
   end
   return 200
 end
+
+delete '/articles/:id' do
+  Article[params[:id]].destroy
+  return 200
+end

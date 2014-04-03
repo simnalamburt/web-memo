@@ -1,6 +1,6 @@
 <% data.reverse_each do |entity| %>
-<div>
-  <textarea id="<%= entity.id %>"><%= entity.content %></textarea>
+<div id="<%= entity.id %>">
+  <textarea><%= entity.content %></textarea>
   <button type="button" class="close">&times;</button>
 </div>
 <% end %>

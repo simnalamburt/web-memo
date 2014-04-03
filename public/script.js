@@ -38,8 +38,17 @@ $(document).ready(function() {
   $('.result').on('blur', 'textarea', function() {
     $.ajax({
       type: 'PUT',
-      url:  '/articles/' + $(this).attr('id'),
+      url:  '/articles/' + $(this).parent().attr('id'),
       data: $(this).val(),
+    });
+  });
+
+  // When the user clicks the delete memo button
+  $('.result').on('click', 'button', function() {
+    $.ajax({
+      type: 'DELETE',
+      url:  '/articles/' + $(this).parent().attr('id'),
+      success: update,
     });
   });
 });
