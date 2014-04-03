@@ -36,8 +36,15 @@ get '/memos/' do
 end
 
 post '/memos/' do
+  content = request.body.read
+
+  # No empty memo
+  if content.empty?
+    return 400
+  end
+
   Memo.create do |memo|
-    memo.content = request.body.read
+    memo.content = content
   end
   200
 end

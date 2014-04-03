@@ -25,8 +25,12 @@ $(document).ready(function() {
   $('.write > textarea').blur(function() {
     var $text = $('.write > textarea')
     var content = $text.val();
-    $text.val('').trigger('autosize.resize');
 
+    // No empty memo
+    if(!content)
+      return;
+
+    $text.val('').trigger('autosize.resize');
     $.ajax({
       type: 'POST',
       url:  '/memos/',
