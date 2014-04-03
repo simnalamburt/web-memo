@@ -54,12 +54,12 @@ textarea {
     min-height 0.2s;
 }
 .write > textarea:focus { min-height: 200px; }
-.write > textarea::-webkit-input-placeholder { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
-.write > textarea::-moz-placeholder          { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
-.write > textarea:-ms-input-placeholder      { position: relative; left: 210px; font-size: 1.5em; line-height: 32px; transition: color 0.2s, left 0.2s; }
-.write > textarea:focus::-webkit-input-placeholder { color: transparent; left: 700px; }
-.write > textarea:focus::-moz-placeholder          { color: transparent; left: 700px; }
-.write > textarea:focus:-ms-input-placeholder      { color: transparent; left: 700px; }
+.write > textarea::-webkit-input-placeholder { font-size: 1.5em; text-align: center; line-height: 32px; transition: color 0.2s; }
+.write > textarea::-moz-placeholder          { font-size: 1.5em; text-align: center; line-height: 32px; transition: color 0.2s; }
+.write > textarea:-ms-input-placeholder      { font-size: 1.5em; text-align: center; line-height: 32px; transition: color 0.2s; }
+.write > textarea:focus::-webkit-input-placeholder { color: transparent; }
+.write > textarea:focus::-moz-placeholder          { color: transparent; }
+.write > textarea:focus:-ms-input-placeholder      { color: transparent; }
 .write > a {
   position: absolute;
   right: 30px;
