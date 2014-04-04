@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'sequel'
+require 'erubis'
+set :erb, :escape_html => true
 
 
 
