@@ -28,14 +28,19 @@
 ### Backup
 
 *   Making a new backup
+
     ```
-    ./make_backup.sh
-    # * 백업 완료! (data.db -> backups/data.db_YYMMDD_HHMM)
+    ./datadump.sh
+    #   data.db -> backups/data.db_140403_1200.bz2
+    # * 백업 완료!
     ```
 
-*   Reverting to the old backup
+*   Restoring the old backup
+
     ```
-    cp backups/data.db_YYMMDD_HHMM data.db
+    ./datarestore.sh backups/data.db_140403_1200.bz2
+    #   backups/data.db_140403_1200.bz2 -> data.db
+    # * 복구 완료! 
     ```
 
 ### Requirements
