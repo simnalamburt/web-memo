@@ -14,7 +14,7 @@
 2.  Install required gems
 
     ```
-    cd hyeonme
+    cd memo
     bundle install
     ```
 
