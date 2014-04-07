@@ -30,7 +30,8 @@
 *   Making a new backup
 
     ```
-    ./datadump.sh
+    cd backups
+    ./save.sh
     #   data.db -> backups/data.db_140403_1200.bz2
     # * 백업 완료!
     ```
@@ -38,7 +39,10 @@
 *   Restoring the old backup
 
     ```
-    ./datarestore.sh backups/data.db_140403_1200.bz2
+    cd backups
+    ls
+    # Choose what you want
+    ./load.sh data.db_140403_1200.bz2
     #   backups/data.db_140403_1200.bz2 -> data.db
     # * 복구 완료! 
     ```

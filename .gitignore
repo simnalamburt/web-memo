@@ -55,4 +55,4 @@ build/
 
 ### Custom ###
 /data.db
-/backups/
+/backups/data.db_*
