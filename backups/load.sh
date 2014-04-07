@@ -12,4 +12,12 @@ target=../$name
 
 echo "   backups/$source -> $name"
 bzip2 -dkc $source > $target
-echo " * 복구 완료!"
+
+exitcode=$?
+if [[ $exitcode != 0 ]]; then
+  echo " ! 복구 실패"
+  exit $exitcode
+else
+  echo " * 복구 완료!"
+  exit 0
+fi
