@@ -15,7 +15,7 @@
 
     ```
     cd memo
-    bundle install --path .bundle
+    bundle install
     ```
 
 3.  Run
