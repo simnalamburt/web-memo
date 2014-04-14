@@ -8,7 +8,7 @@ echo "   $name -> backups/$target"
 bzip2 -kc $source > $target
 
 exitcode=$?
-if [[ $exitcode = 0 ]]; then
+if [ $exitcode -ne 0 ]; then
   echo " ! 백업 실패"
   exit $exitcode
 else

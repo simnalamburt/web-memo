@@ -14,7 +14,7 @@ echo "   backups/$source -> $name"
 bzip2 -dkc $source > $target
 
 exitcode=$?
-if [[ $exitcode != 0 ]]; then
+if [ $exitcode -ne 0 ]; then
   echo " ! 복구 실패"
   exit $exitcode
 else
