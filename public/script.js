@@ -8,18 +8,10 @@ $(document).ready(function() {
 
   // READ
   var update = function() {
-    $.ajax({
-      type: 'GET',
-      url:  '/memos/',
-      success: function(data) {
-        $('.result')
-        .html(data)
-        .find('textarea').autosize();
-      }
+    $('.result').load('/ .result > *', function() {
+      $(this).find('textarea').autosize();
     });
   };
-  
-  update();
 
   // CREATE : When the user clicks the write button
   $('.write > textarea').blur(function() {

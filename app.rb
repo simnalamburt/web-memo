@@ -30,11 +30,7 @@ end
 
 ### Controller
 get '/' do
-  erb :main
-end
-
-get '/memos/' do
-  erb :memos, locals: { data: Memo.all }
+  erb :main, locals: { data: Memo.all }
 end
 
 post '/memos/' do
