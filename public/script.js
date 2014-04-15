@@ -34,8 +34,7 @@ $(document).ready(function() {
     $.ajax({
       type: 'POST',
       url:  '/memos/',
-      contentType: 'text/plain',
-      data: content,
+      data: { 'content': content },
       success: update,
     });
   });
@@ -45,8 +44,7 @@ $(document).ready(function() {
     $.ajax({
       type: 'PUT',
       url:  '/memos/' + $(this).parent().attr('id'),
-      contentType: 'text/plain',
-      data: $(this).val(),
+      data: { 'content': $(this).val() },
     });
   });
 

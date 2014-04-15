@@ -38,7 +38,7 @@ get '/memos/' do
 end
 
 post '/memos/' do
-  content = request.body.read
+  content = params[:content]
 
   # No empty memo
   if content.empty?
@@ -55,7 +55,7 @@ put '/memos/:id' do
   DB.transaction do
     memo = Memo[params[:id]]
     memo.lock!
-    memo.content = request.body.read
+    memo.content = params[:content]
     memo.save
   end
   200
