@@ -1,20 +1,20 @@
-[normal]memo
+[hyeon.me](http://hyeon.me/)
 =====
 
-간단한 웹기반 메모 서비스
+간단한 메모장
 
 ### Installation
 
 1.  Clone the repository
 
     ```
-    git clone http://git.likelion.net/normal/memo.git
+    git clone https://github.com/simnalamburt/hyeon-me.git
     ```
 
 2.  Install required gems
 
     ```
-    cd memo
+    cd hyeon-me
     bundle install
     ```
 
