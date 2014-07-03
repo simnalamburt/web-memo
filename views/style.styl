@@ -1,100 +1,115 @@
-@import url('http://fonts.googleapis.com/css?family=Titillium+Web:400,600');
-@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@import url('http://fonts.googleapis.com/css?family=Titillium+Web:400,600')
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css')
 
-html, body { height: 100%; }
-html {
-  background: url('bkground.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-body {
-  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif;
-  background: linear-gradient(to bottom, white 100px, transparent 700px);
-}
 
-textarea {
-  width: 100%;
-  height: 40px;
-  font-size: 1.2em;
+html
+  min-height 100%
+  background url('bkground.jpg')
+  background-position center center
+  background-size cover
+  background-attachment fixed
 
-  display: block;
-  border: none;
-  resize: none;
-  outline: none;
-  overflow: hidden;
+body
+  min-height 100%
+  font-family 'Titillium Web', 'Nanum Gothic', sans-serif
+  background linear-gradient(to bottom, white 100px, transparent 700px)
 
-  background-color: rgba(255, 255, 255, 0.95);
-}
 
-.container {
-  min-height: 100%;
-  padding-top: 130px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-.container > img {
-  width: 500px;
-}
+textarea
+  width 100%
+  height 40px
+  font-size 1.2em
 
-.write {
-  position: relative;
-  width: 50%;
-  margin: 40px auto 80px auto;
-}
-.write > textarea {
-  height: 60px;
-  padding: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 7px;
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  display block
+  border none
+  resize none
+  outline none
+  overflow hidden
 
-  transition:
-    height 0.2s,
-    min-height 0.2s;
-}
-.write > textarea:focus { min-height: 200px; }
-.write > textarea::-webkit-input-placeholder { font-size: 1.5em; text-align: center; line-height: 32px; transition: color 0.2s; }
-.write > textarea::-moz-placeholder          { font-size: 1.5em; text-align: center; line-height: 32px; transition: color 0.2s; }
-.write > textarea:-ms-input-placeholder      { font-size: 1.5em; text-align: center; line-height: 32px; transition: color 0.2s; }
-.write > textarea:focus::-webkit-input-placeholder { color: transparent; }
-.write > textarea:focus::-moz-placeholder          { color: transparent; }
-.write > textarea:focus:-ms-input-placeholder      { color: transparent; }
-.write > a {
-  position: absolute;
-  right: 30px;
-  bottom: 18px;
-  color: #1abc9c;
-}
+  background-color rgba(255, 255, 255, 0.95)
 
-.result {
-  padding: 0 20px;
-          column-count: 3;
-     -moz-column-count: 3;
-  -webkit-column-count: 3;
-          column-gap: 20px;
-     -moz-column-gap: 20px;
-  -webkit-column-gap: 20px;
-}
-.result > div {
-  width: 100%;
-  display: inline-block;
-  position: relative;
-}
-.result > div > textarea {
-  margin: 5px 0;
-  border: 8px solid transparent;
-  padding: 4px;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
 
-  transition:
-    height 0.2s,
-    min-height 0.2s,
-    border-color 0.2s;
-}
-.result > div > textarea:focus { border-color: rgba(0, 0, 0, 0.05); }
-.result > div > button {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-}
+.container
+  min-height 100%
+  padding-top 130px
+  padding-bottom 20px
+  text-align center
+
+  > img
+    width 500px
+
+
+.write
+  position relative
+  width 50%
+  margin 40px auto 80px auto
+
+  > textarea
+    height 60px
+    padding 12px
+    border 2px solid rgba(0, 0, 0, 0.1)
+    border-radius 7px
+    box-shadow 5px 5px 0 rgba(0, 0, 0, 0.1)
+
+    transition height 0.2s, min-height 0.2s
+
+    placeholder()
+      font-size 1.5em
+      text-align center
+      line-height 32px
+      transition color 0.2s
+    // You can't use `@extends` because of the weird behavior of chrome
+    &::-webkit-input-placeholder
+      placeholder()
+    &::-moz-placeholder
+      placeholder()
+    &:-ms-input-placeholder
+      placeholder()
+
+    &:focus
+      min-height 200px
+
+      focus-placeholder()
+        color transparent
+      &::-webkit-input-placeholder
+        focus-placeholder()
+      &::-moz-placeholder
+        focus-placeholder()
+      &:-ms-input-placeholder
+        focus-placeholder()
+
+  > a
+    position absolute
+    right 30px
+    bottom 18px
+    color #1abc9c
+
+
+.result
+  padding 0 20px
+  column-count 3
+  -moz-column-count 3
+  -webkit-column-count 3
+  column-gap 20px
+  -moz-column-gap 20px
+  -webkit-column-gap 20px
+
+  > div
+    width 100%
+    display inline-block
+    position relative
+
+    > textarea
+      margin 5px 0
+      border 8px solid transparent
+      padding 4px
+      box-shadow 0 3px 0 rgba(0, 0, 0, 0.08)
+      transition height 0.2s, min-height 0.2s, border-color 0.2s
+
+      &:focus
+        border-color rgba(0, 0, 0, 0.05)
+
+    > button
+      position absolute
+      top 2px
+      right 2px
