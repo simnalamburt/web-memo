@@ -1,10 +1,11 @@
 require 'date'
 
-name = 'data.db'
-source = "../#{name}"
-target = "#{name}_#{DateTime.now.strftime '%y%m%d_%H%M%S_%L'}.bz2"
+source = 'data.db'
+targetdir = 'backups'
+target = "#{targetdir}/#{DateTime.now.strftime '%y%m%d_%H%M%S_%L'}"
 
-puts "   #{name} -> backups/#{target}"
+puts "   #{source} => #{target}"
+`mkdir -p #{targetdir}`
 `bzip2 -kc #{source} > #{target}`
 
 if $?.success?

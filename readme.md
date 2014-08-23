@@ -30,20 +30,20 @@
 *   Making a new backup
 
     ```bash
-    cd backups
+    cd db
     ruby save.sh
-    #   data.db -> backups/data.db_140403_1200.bz2
+    #   data.db => backups/140403_120000_000
     # * 백업 완료!
     ```
 
 *   Restoring the old backup
 
     ```bash
-    cd backups
-    ls
+    cd db
+    ls backups
     # Choose what you want
-    ruby load.sh data.db_140403_1200.bz2
-    #   backups/data.db_140403_1200.bz2 -> data.db
+    ruby load.sh backups/140403_120000_000
+    #   backups/140403_120000_000 => data.db
     # * 복구 완료!
     ```
 

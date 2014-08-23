@@ -1,22 +1,21 @@
 if ARGV.empty?
   print <<-MESSAGE
 어느 백업을 복구시킬지 지정해주세요
-ex) ruby load.rb data.db_140403_120000_000
+ex) ruby load.rb backups/140403_120000_000
   MESSAGE
   exit 1
 elsif ARGV.length > 1
   print <<-MESSAGE
 복구시킬 백업을 한개만 지정해주세요
-ex) ruby load.rb data.db_140403_120000_000
+ex) ruby load.rb backups/140403_120000_000
   MESSAGE
   exit 1
 end
 
-name = 'data.db'
 source = ARGV[0]
-target = "../#{name}"
+target = 'data.db'
 
-puts "   backups/#{source} -> #{name}"
+puts "   #{source} => #{target}"
 `bzip2 -dkc #{source} > #{target}`
 
 if $?.success?
