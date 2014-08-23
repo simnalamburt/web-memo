@@ -9,7 +9,7 @@ set :erb, :escape_html => true
 
 
 ### Model
-DB = Sequel.sqlite('data.db')
+DB = Sequel.sqlite('db/data.db')
 
 Sequel::Model.plugin(:schema)
 class Memo < Sequel::Model

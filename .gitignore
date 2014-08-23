@@ -1,3 +1,2 @@
 # DB & backups
-/data.db
-/backups/data.db_*
+/db/**/data.db*
