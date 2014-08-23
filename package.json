@@ -4,9 +4,10 @@
 , "author": "Hyeon Kim"
 , "homepage": "http://hyeon.me/"
 , "license": "BSD"
-, "scripts":
-  { "test": "echo 'There is nothing to do'"
-  }
+, "keywords":
+  [ "Momo"
+  , "Notepad"
+  ]
 , "repository":
   { "type": "git"
   , "url": "https://github.com/simnalamburt/hyeon-me.git"
