@@ -1,3 +1,6 @@
+# npm
+/node_modules
+
 # DB & backups
 /db/data.db
 /db/backups

@@ -15,6 +15,7 @@
 2.  Install required gems
 
     ```bash
+    npm install
     bundle install
     ```
 
@@ -52,5 +53,7 @@
 * Ubuntu 12.04 or higher
 
   OS X 10.9.1 or higer
+
+* nods.js 0.10.25 or higher
 
 * Ruby MRI 2.0.0p247 or higher
