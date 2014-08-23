@@ -14,4 +14,7 @@
 , "bugs":
   { "url": "https://github.com/simnalamburt/hyeon-me/issues"
   }
+, "devDependencies":
+  { "gulp": "^3.8.7"
+  }
 }
