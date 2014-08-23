@@ -3,4 +3,5 @@
 
 # DB & backups
 /db/data.db
+/db/data.db-journal
 /db/backups
