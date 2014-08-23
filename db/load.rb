@@ -16,7 +16,7 @@ source = ARGV[0]
 target = 'data.db'
 
 puts "   #{source} => #{target}"
-`bzip2 -dkc #{source} > #{target}`
+`xz -dkc #{source} > #{target}`
 
 if $?.success?
   puts ' * 복구 완료'

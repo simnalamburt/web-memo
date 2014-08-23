@@ -57,3 +57,5 @@
 * nods.js 0.10.25 or higher
 
 * Ruby MRI 2.0.0p247 or higher
+
+* XZ Utils 5.0.5 or higher

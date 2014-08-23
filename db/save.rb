@@ -6,7 +6,7 @@ target = "#{targetdir}/#{DateTime.now.strftime '%y%m%d_%H%M%S_%L'}"
 
 puts "   #{source} => #{target}"
 `mkdir -p #{targetdir}`
-`bzip2 -kc #{source} > #{target}`
+`xz -kc #{source} > #{target}`
 
 if $?.success?
   puts ' * 백업 완료'
