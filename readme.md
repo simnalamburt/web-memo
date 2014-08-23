@@ -9,12 +9,12 @@
 
     ```
     git clone https://github.com/simnalamburt/hyeon-me.git
+    cd hyeon-me
     ```
 
 2.  Install required gems
 
     ```
-    cd hyeon-me
     bundle install
     ```
 
@@ -44,7 +44,7 @@
     # Choose what you want
     ./load.sh data.db_140403_1200.bz2
     #   backups/data.db_140403_1200.bz2 -> data.db
-    # * 복구 완료! 
+    # * 복구 완료!
     ```
 
 ### Requirements
