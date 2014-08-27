@@ -1,19 +1,5 @@
-{ "name": "hyeon-me"
-, "version": "0.1.0"
-, "description": "Simple notepad"
-, "author": "Hyeon Kim"
-, "homepage": "http://hyeon.me/"
-, "license": "BSD"
-, "keywords":
-  [ "Momo"
-  , "Notepad"
-  ]
-, "repository":
-  { "type": "git"
-  , "url": "https://github.com/simnalamburt/hyeon-me.git"
-  }
-, "bugs":
-  { "url": "https://github.com/simnalamburt/hyeon-me/issues"
+{ "scripts":
+  {
   }
 , "devDependencies":
   { "gulp": "^3.8.7"
