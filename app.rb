@@ -1,10 +1,6 @@
 require 'sinatra'
+require 'sinatra/json'
 require 'sequel'
-require 'erubis'
-require 'stylus'
-require 'stylus/tilt'
-
-set :erb, escape_html: true
 
 
 
@@ -33,10 +29,7 @@ end
 
 ### Controller
 get '/' do
-  erb :main, locals: { data: Memo.all }
-end
-get '/style.css' do
-  stylus :style
+  json DB[:memos].all
 end
 
 post '/memos/' do
