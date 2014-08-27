@@ -1,7 +1,24 @@
+'use strict';
+
 var gulp = require('gulp');
 
-gulp.task('default', function() {
-  console.log('');
-  console.log('There\'s nothing to do');
-  console.log('');
+var save = function() { return gulp.dest('./public'); };
+
+gulp.task('default', function(cb) {
+  var sequence = require('run-sequence');
+
+  sequence('copy',
+          ['html', 'js', 'css'],
+          cb);
 });
+
+gulp.task('copy', function() {
+  return gulp.src('./client/**/*')
+    .pipe(save());
+});
+
+gulp.task('html');
+
+gulp.task('js');
+
+gulp.task('css');

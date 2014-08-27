@@ -5,3 +5,6 @@
 /db/data.db
 /db/data.db-journal
 /db/backups
+
+# build results
+/public
