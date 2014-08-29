@@ -1,2 +1,6 @@
 { "name": "hyeon-me"
+, "dependencies":
+  { "bootstrap": "^3.2.0"
+  , "jquery-autosize": "^1.18.9"
+  }
 }
