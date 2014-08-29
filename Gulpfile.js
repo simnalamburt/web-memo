@@ -18,6 +18,14 @@ gulp.task('copy', function() {
     .pipe(save());
 });
 
+gulp.task('slm', function() {
+  var slm = require('gulp-slm');
+
+  return ext('slm')
+    .pipe(slm())
+    .pipe(save());
+});
+
 gulp.task('stylus', function() {
   var stylus = require('gulp-stylus');
 
@@ -26,7 +34,7 @@ gulp.task('stylus', function() {
     .pipe(save());
 });
 
-gulp.task('html');
+gulp.task('html', ['slm']);
 
 gulp.task('js');
 

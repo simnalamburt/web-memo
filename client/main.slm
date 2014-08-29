@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="author" content="Hyeon Kim"
+    meta name="title" content="Simple Memo"
+    meta name="description" content="간단한 웹기반 메모 서비스"
+    title Memo
+    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"
+    link rel="stylesheet" href="style.css"
+    /[if lt IE 9]
+      script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+      script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
+
+  body
+    .container
+      img src="logo.png"
+      .write
+        textarea placeholder="new memo"
+        a href="javascript:;"
+          span.glyphicon.glyphicon-pencil
+      .result
+        div
+          textarea ㅇㅁㅇ)!
+          button.close type="button" &times;
+
+    script src="//code.jquery.com/jquery-1.11.0.min.js"
+    script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
+    script src="jquery.autosize.min.js"
+    script src="script.js"
