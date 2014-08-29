@@ -1,6 +1,9 @@
 # npm
 /node_modules
 
+# bower
+/client/lib
+
 # DB & backups
 /db/data.db
 /db/data.db-journal

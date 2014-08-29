@@ -16,6 +16,7 @@
 
     ```bash
     npm install
+    bower install
     bundle install
     ```
 
