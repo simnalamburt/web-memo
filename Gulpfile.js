@@ -39,3 +39,10 @@ gulp.task('html', ['slm']);
 gulp.task('js');
 
 gulp.task('css', ['stylus']);
+
+gulp.task('clean', function() {
+  var rm = require('gulp-rimraf');
+
+  return gulp.src('./public', { read: false })
+    .pipe(rm());
+});
