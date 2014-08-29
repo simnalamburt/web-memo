@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 
+var ext = function(ext) { return gulp.src('./public/**/*.' + ext); };
 var save = function() { return gulp.dest('./public'); };
 
 gulp.task('default', function(cb) {
@@ -17,8 +18,16 @@ gulp.task('copy', function() {
     .pipe(save());
 });
 
+gulp.task('stylus', function() {
+  var stylus = require('gulp-stylus');
+
+  return ext('styl')
+    .pipe(stylus())
+    .pipe(save());
+});
+
 gulp.task('html');
 
 gulp.task('js');
 
-gulp.task('css');
+gulp.task('css', ['stylus']);
