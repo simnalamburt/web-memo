@@ -16,16 +16,15 @@ html
       script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
 
   body
-    .container
-      img src="logo.png"
-      .write
-        textarea placeholder="New Memo"
-        a href=true
-          i.fa.fa-lg.fa-pencil
-      .result
-        div
-          textarea ㅇㅁㅇ)!
-          button.close type="button" &times;
+    img src="logo.png"
+    #write
+      textarea placeholder="New Memo"
+      a href=true
+        i.fa.fa-lg.fa-pencil
+    #result.container
+      div
+        textarea ㅇㅁㅇ)!
+        button.close type="button" &times;
 
     script src="lib/jquery/dist/jquery.min.js"
     script src="lib/bootstrap/dist/js/bootstrap.min.js"

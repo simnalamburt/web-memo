@@ -4,45 +4,38 @@
 
 html
   min-height 100vh
-  background url('bkground.jpg')
-  background-position center center
-  background-size cover
-  background-attachment fixed
+  background url('bkground.jpg') center / cover fixed
 
 body
   min-height 100vh
+  padding 130px 0 20px 0
+
   font-family 'Titillium Web', 'Nanum Gothic', sans-serif
   background linear-gradient(to bottom, white 100px, transparent 700px)
 
+
+img
+  display block
+  width 500px
+  margin 0 auto
 
 textarea
   width 100%
   height 40px
   font-size 1.2em
-
+  background-color rgba(255, 255, 255, 0.95)
+  // reset css
   display block
   border none
   resize none
   outline none
   overflow hidden
 
-  background-color rgba(255, 255, 255, 0.95)
 
-
-.container
-  min-height 100%
-  padding-top 130px
-  padding-bottom 20px
-  text-align center
-
-  > img
-    width 500px
-
-
-.write
-  position relative
-  width 50%
+#write
+  max-width 600px
   margin 40px auto 80px auto
+  padding 0 20px
 
   > textarea
     height 60px
@@ -58,6 +51,7 @@ textarea
       text-align center
       line-height 48px
       transition color 0.2s
+
     // You can't use `@extends` because of the weird behavior of chrome
     &::-webkit-input-placeholder
       placeholder()
@@ -78,15 +72,15 @@ textarea
       &:-ms-input-placeholder
         focus-placeholder()
 
+  position relative
   > a
     position absolute
-    right 30px
+    right 50px
     bottom 28px
     color #1abc9c
 
 
-.result
-  padding 0 20px
+#result
   column-count 3
   -moz-column-count 3
   -webkit-column-count 3
@@ -95,9 +89,8 @@ textarea
   -webkit-column-gap 20px
 
   > div
-    width 100%
     display inline-block
-    position relative
+    width 100%
 
     > textarea
       margin 5px 0
@@ -105,11 +98,12 @@ textarea
       padding 4px
       box-shadow 0 3px 0 rgba(0, 0, 0, 0.08)
       transition height 0.2s, min-height 0.2s, border-color 0.2s
-
       &:focus
         border-color rgba(0, 0, 0, 0.05)
 
+    position relative
     > button
       position absolute
       top 2px
       right 2px
+      outline none
