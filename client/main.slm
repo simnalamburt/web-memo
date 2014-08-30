@@ -18,7 +18,7 @@ html
     .container
       img src="logo.png"
       .write
-        textarea placeholder="new memo"
+        textarea placeholder="New Memo"
         a href="javascript:;"
           span.glyphicon.glyphicon-pencil
       .result
