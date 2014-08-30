@@ -46,31 +46,17 @@ textarea
 
     transition height 0.2s, min-height 0.2s
 
-    placeholder()
+    &::placeholder
       font-size 1.8em
       text-align center
       line-height 48px
       transition color 0.2s
 
-    // You can't use `@extends` because of the weird behavior of chrome
-    &::-webkit-input-placeholder
-      placeholder()
-    &::-moz-placeholder
-      placeholder()
-    &:-ms-input-placeholder
-      placeholder()
-
     &:focus
       min-height 200px
 
-      focus-placeholder()
+      &::placeholder
         color transparent
-      &::-webkit-input-placeholder
-        focus-placeholder()
-      &::-moz-placeholder
-        focus-placeholder()
-      &:-ms-input-placeholder
-        focus-placeholder()
 
   position relative
   > a
@@ -82,11 +68,7 @@ textarea
 
 #result
   column-count 3
-  -moz-column-count 3
-  -webkit-column-count 3
   column-gap 20px
-  -moz-column-gap 20px
-  -webkit-column-gap 20px
 
   > div
     display inline-block

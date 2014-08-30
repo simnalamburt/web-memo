@@ -38,7 +38,13 @@ gulp.task('html', ['slm']);
 
 gulp.task('js');
 
-gulp.task('css', ['stylus']);
+gulp.task('css', ['stylus'], function() {
+  var prefix = require('gulp-autoprefixer');
+
+  return ext('css')
+    .pipe(prefix())
+    .pipe(save());
+});
 
 gulp.task('clean', function() {
   var rm = require('gulp-rimraf');
