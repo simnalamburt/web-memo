@@ -26,6 +26,14 @@ gulp.task('slm', function() {
     .pipe(save());
 });
 
+gulp.task('ls', function() {
+  var live = require('gulp-livescript');
+
+  return ext('ls')
+    .pipe(live())
+    .pipe(save());
+});
+
 gulp.task('stylus', function() {
   var stylus = require('gulp-stylus');
 
