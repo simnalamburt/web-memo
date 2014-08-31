@@ -7,8 +7,7 @@ html
     meta name="title" content="Simple Memo"
     meta name="description" content="간단한 웹기반 메모 서비스"
     title Memo
-    link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"
-    link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css"
+    link rel="stylesheet" href="lib/normalize-css/normalize.css"
     link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css"
     link rel="stylesheet" href="style.css"
     /[if lt IE 9]
@@ -28,6 +27,5 @@ html
           i.fa.fa-times
 
     script src="lib/jquery/dist/jquery.min.js"
-    script src="lib/bootstrap/dist/js/bootstrap.min.js"
     script src="lib/jquery-autosize/jquery.autosize.min.js"
     script src="script.js"
