@@ -24,7 +24,8 @@ html
     #result.container
       div
         textarea ㅇㅁㅇ)!
-        button.close type="button" &times;
+        a href=true
+          i.fa.fa-times
 
     script src="lib/jquery/dist/jquery.min.js"
     script src="lib/bootstrap/dist/js/bootstrap.min.js"

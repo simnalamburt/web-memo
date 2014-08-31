@@ -84,8 +84,12 @@ textarea
         border-color rgba(0, 0, 0, 0.05)
 
     position relative
-    > button
+    > a
       position absolute
       top 2px
       right 2px
-      outline none
+
+      color rgba(0, 0, 0, 0.2)
+      &:focus
+      &:hover
+        color rgba(0, 0, 0, 0.5)
