@@ -29,3 +29,4 @@ html
     script src="lib/jquery/dist/jquery.min.js"
     script src="lib/jquery-autosize/jquery.autosize.min.js"
     script src="script.js"
+    script src="misc/ga.js"
