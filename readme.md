@@ -33,7 +33,7 @@
 
     ```bash
     cd db
-    ruby save.sh
+    ruby save.rb
     #   data.db => backups/140403_120000_000
     # * 백업 완료!
     ```
@@ -44,7 +44,7 @@
     cd db
     ls backups
     # Choose what you want
-    ruby load.sh backups/140403_120000_000
+    ruby load.rb backups/140403_120000_000
     #   backups/140403_120000_000 => data.db
     # * 복구 완료!
     ```
