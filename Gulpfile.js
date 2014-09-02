@@ -36,7 +36,7 @@ function save() { return gulp.dest('./public'); };
 
 
 // 1. gulp
-gulp.task('default', ['markup', 'script', 'stylesheet', 'etc']);
+gulp.task('default', ['html', 'slm', 'js', 'ls', 'css', 'styl', 'etc']);
 
 // HTML
 gulp.task('html', function() {
@@ -52,8 +52,6 @@ gulp.task('slm', function() {
     .pipe(save());
 });
 
-gulp.task('markup', ['html', 'slm']);
-
 // Javascript
 gulp.task('js', function() {
   return src.js()
@@ -67,8 +65,6 @@ gulp.task('ls', function() {
     .pipe(ls())
     .pipe(save());
 });
-
-gulp.task('script', ['js', 'ls']);
 
 // CSS
 gulp.task('css', function() {
@@ -88,8 +84,6 @@ gulp.task('styl', function() {
     .pipe(prefix())
     .pipe(save());
 });
-
-gulp.task('stylesheet', ['css', 'styl']);
 
 // etc
 gulp.task('etc', function() {
