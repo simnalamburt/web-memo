@@ -1,7 +1,4 @@
-{ "scripts":
-  {
-  }
-, "devDependencies":
+{ "devDependencies":
   { "gulp": "^3.8.7"
   , "run-sequence": "^0.3.6"
   , "gulp-slm": "^0.0.3"
