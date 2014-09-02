@@ -4,39 +4,65 @@ var gulp = require('gulp');
 
 
 //
+// path.html    : './client/**/*.html'
+// path.slm     : './client/**/*.slm'
+// path.js      : './client/**/*.js'
+// path.ls      : './client/**/*.ls'
+// path.css     : './client/**/*.css'
+// path.styl    : './client/**/*.styl'
+// path._       : ['./client/**/*.*', '!./client/**/*.html', ...]
+// path.DIR     : './client'
+//
+// result.html  : './public/**/*.html'
+// result.slm   : './public/**/*.slm'
+//   et cetera
+//
 // src.html()   : gulp.src('./client/**/*.html')
-// src.js()     : gulp.src('./client/**/*.js')
-// src.css()    : gulp.src('./client/**/*.css')
+// src.slm()    : gulp.src('./client/**/*.slm')
 // src._()      : gulp.src(['./client/**/*.*', '!./client/**/*.html', ...])
 // src.DIR()    : gulp.src('./client', { read: false })
 //
 // build.html() : gulp.src('./public/**/*.html')
-// build.js()   : gulp.src('./public/**/*.js')
-//    et cetera
+// build.slm()  : gulp.src('./public/**/*.slm')
+//   et cetera
 //
 // save()       : gulp.dest('./public')
 //
-var src = {}, build = {};
-[ { obj: src,   path: './client' }
-, { obj: build, path: './public' }
+var path = {}, result = {}, src = {}, build = {};
+[ { dict: path,   helper: src,   path: './client' }
+, { dict: result, helper: build, path: './public' }
 ].forEach( function(i) {
+  function def(key, glob, options) {
+    i.dict[key] = glob;
+    i.helper[key] = function() { return gulp.src(glob, options); };
+    return glob;
+  }
+
   var used = [];
   [ 'html', 'slm', 'js', 'ls', 'css', 'styl'  // Actally used
   , 'txt', 'md', 'json'                       // Blacklist
   ].forEach( function(ext) {
-    var url = i.path + '/**/*.' + ext;
-    i.obj[ext] = function() { return gulp.src(url); };
+    var url = i.path + '/**/*.' + ext
+    def(ext, url);
     used.push('!' + url);
   });
-  i.obj._ = function() { return gulp.src([i.path + '/**/*.*'].concat(used)); };
-  i.obj.DIR = function() { return gulp.src(i.path, { read: false }); };
+  def('_', [i.path + '/**/*.*'].concat(used));
+  def('DIR', i.path, { read: false });
 });
 
 function save() { return gulp.dest('./public'); };
 
 
 // 1. gulp
-gulp.task('default', ['html', 'slm', 'js', 'ls', 'css', 'styl', 'etc']);
+// 2. gulp watch
+var tasks = ['html', 'slm', 'js', 'ls', 'css', 'styl', '_'];
+gulp.task('default', tasks);
+gulp.task('watch', function(cb) {
+  tasks.forEach( function(task) {
+    gulp.watch(path[task], [task]);
+  });
+  cb();
+});
 
 // HTML
 gulp.task('html', function() {
@@ -86,13 +112,13 @@ gulp.task('styl', function() {
 });
 
 // etc
-gulp.task('etc', function() {
+gulp.task('_', function() {
   return src._()
     .pipe(save());
 });
 
 
-// 2. gulp clean
+// 3. gulp clean
 gulp.task('clean', function() {
   var rm = require('gulp-rimraf');
 
