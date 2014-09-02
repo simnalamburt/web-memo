@@ -1,5 +1,5 @@
 doctype html
-html
+html ng-app="hyeonme"
   head
     meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
@@ -14,16 +14,16 @@ html
   body
     img src="logo.png"
     #write
-      textarea placeholder="New Memo"
+      textarea msd-elastic="\n" ng-model="write" placeholder="New Memo"
       a href=true
         i.fa.fa-lg.fa-pencil
     #result.container
-      div
-        textarea ㅇㅁㅇ)!
+      div ng-init="_ = 'ㅇㅁㅇ)!'"
+        textarea msd-elastic="\n" ng-model="_"
         a href=true
           i.fa.fa-times
 
-    script src="lib/jquery/dist/jquery.min.js"
-    script src="lib/jquery-autosize/jquery.autosize.min.js"
+    script src="lib/angular/angular.min.js"
+    script src="lib/angular-elastic/elastic.js"
     script src="script.js"
     script src="misc/ga.js"
