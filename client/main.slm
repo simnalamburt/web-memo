@@ -10,9 +10,6 @@ html
     link rel="stylesheet" href="lib/normalize-css/normalize.css"
     link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css"
     link rel="stylesheet" href="style.css"
-    /[if lt IE 9]
-      script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
-      script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
 
   body
     img src="logo.png"
