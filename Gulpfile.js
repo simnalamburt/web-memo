@@ -57,7 +57,7 @@ function save() { return gulp.dest('./public'); };
 // 2. gulp watch
 var tasks = ['html', 'slm', 'js', 'ls', 'css', 'styl', '_'];
 gulp.task('default', tasks);
-gulp.task('watch', function(cb) {
+gulp.task('watch', tasks, function(cb) {
   tasks.forEach( function(task) {
     gulp.watch(path[task], [task]);
   });
