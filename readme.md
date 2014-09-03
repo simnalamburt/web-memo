@@ -5,27 +5,19 @@
 
 ### Installation
 
-1.  Clone the repository
+```bash
+git clone https://github.com/simnalamburt/hyeon-me.git
+cd hyeon-me
+```
+```bash
+npm install && bower install && bundle install
+```
+```bash
+gulp watch & ruby app.rb &
 
-    ```bash
-    git clone https://github.com/simnalamburt/hyeon-me.git
-    cd hyeon-me
-    ```
-
-2.  Install required gems
-
-    ```bash
-    npm install
-    bower install
-    bundle install
-    ```
-
-3.  Run
-
-    ```bash
-    ruby app.rb
-    # Listening on 0.0.0.0:4567 ...
-    ```
+# (client) Auto compiling assets ...
+# (server) Listening on 0.0.0.0:4567 ...
+```
 
 ### Backup
 
