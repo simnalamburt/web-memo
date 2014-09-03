@@ -13,7 +13,7 @@ cd hyeon-me
 npm install && bower install && bundle install
 ```
 ```bash
-gulp watch & ruby app.rb &
+gulp watch & ruby server.rb &
 
 # (client) Auto compiling assets ...
 # (server) Listening on 0.0.0.0:4567 ...
