@@ -9,7 +9,7 @@ html ng-app="hyeonme"
     title Memo
     link rel="stylesheet" href="lib/normalize-css/normalize.css"
     link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css"
-    link rel="stylesheet" href="style.css"
+    link rel="stylesheet" href="index.css"
 
   body ng-controller="MemoCtrl"
     img src="logo.png"
@@ -25,5 +25,5 @@ html ng-app="hyeonme"
 
     script src="lib/angular/angular.min.js"
     script src="lib/angular-elastic/elastic.js"
-    script src="script.js"
     script src="misc/ga.js"
+    script src="index.js"
