@@ -28,11 +28,11 @@ end
 
 
 ### Controller
-get '/' do
+get '/memos' do
   json DB[:memos].all
 end
 
-post '/memos/' do
+post '/memos' do
   content = params[:content]
 
   # No empty memo
