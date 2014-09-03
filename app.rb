@@ -60,3 +60,10 @@ delete '/memos/:id' do
   Memo[params[:id]].destroy
   200
 end
+
+
+
+# (development mode only)
+get '/' do
+  File.read('public/index.html')
+end
