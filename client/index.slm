@@ -25,5 +25,7 @@ html ng-app="hyeonme"
 
     script src="lib/angular/angular.min.js"
     script src="lib/angular-elastic/elastic.js"
+    script src="lib/lodash/dist/lodash.min.js"
+    script src="lib/restangular/dist/restangular.min.js"
     script src="misc/ga.js"
     script src="index.js"

@@ -1,5 +1,5 @@
 angular
-.module \hyeonme <[ monospaced.elastic ]>
+.module \hyeonme <[ monospaced.elastic restangular ]>
 .controller \MemoCtrl ($scope) ->
   let @ = $scope
     @memos =
