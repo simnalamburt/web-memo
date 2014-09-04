@@ -1,11 +1,8 @@
 angular
 .module \hyeonme <[ monospaced.elastic restangular ]>
-.controller \MemoCtrl ($scope) ->
+.controller \MemoCtrl ($scope, Restangular) ->
   let @ = $scope
-    @memos =
-      'ㅇㅅaㅇ'
-      'ㅎㅅㅎ)b'
-      'ㅇㅁㅇ)!'
+    @memos = Restangular.all \memos .getList!.$object
 
     @create = ->
       if @new

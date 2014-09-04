@@ -18,8 +18,8 @@ html ng-app="hyeonme"
       a href=true
         i.fa.fa-lg.fa-pencil
     #result.container
-      div ng-repeat="memo in memos track by $index"
-        textarea msd-elastic="\n" ng-model="memo"
+      div ng-repeat="memo in memos track by memo.id"
+        textarea msd-elastic="\n" ng-model="memo.content"
         a ng-click="delete($index)"
           i.fa.fa-times
 
