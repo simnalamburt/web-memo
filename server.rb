@@ -26,7 +26,7 @@ end
 
 ### Controller
 get '/memos' do
-  json memos.all
+  json memos.all.reverse
 end
 
 post '/memos' do

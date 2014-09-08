@@ -14,7 +14,7 @@ angular
       .post @new
       .then (id) ~>
         @new.id = id
-        @memos.push Restangular.restangularizeElement @parentResource, @new, \memos
+        @memos.unshift Restangular.restangularizeElement @parentResource, @new, \memos
         @new = {}
       , ~>
         ...
