@@ -14,13 +14,13 @@ html ng-app="hyeonme"
   body ng-controller="MemoCtrl"
     img src="logo.png"
     #write
-      textarea msd-elastic="\n" ng-model="new" ng-blur="create()" placeholder="New Memo"
+      textarea msd-elastic="\n" ng-model="new.content" ng-blur="create()" placeholder="New Memo"
       a href=true
         i.fa.fa-lg.fa-pencil
     #result.container
       div ng-repeat="memo in memos track by memo.id"
-        textarea msd-elastic="\n" ng-model="memo.content"
-        a ng-click="delete($index)"
+        textarea msd-elastic="\n" ng-model="memo.content" ng-blur="update(memo.id)"
+        a ng-click="delete(memo.id)"
           i.fa.fa-times
 
     script src="lib/angular/angular.min.js"

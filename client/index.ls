@@ -2,12 +2,35 @@ angular
 .module \hyeonme <[ monospaced.elastic restangular ]>
 .controller \MemoCtrl ($scope, Restangular) ->
   let @ = $scope
-    @memos = Restangular.all \memos .getList!.$object
+    all = Restangular.all \memos
+    select = (i) ~> _.find @memos, (.id == i)
 
-    @create = ->
-      if @new
-        @memos.push @new
-        @new = ''
+    @memos = all.getList!.$object
 
-    @delete = (i) ->
-      @memos.splice i, 1
+    @create = ~>
+      return unless @new.content
+
+      all
+      .post @new
+      .then (id) ~>
+        @new.id = id
+        @memos.push Restangular.restangularizeElement @parentResource, @new, \memos
+        @new = {}
+      , ~>
+        ...
+
+    @update = (i) ~>
+      select i
+      .put!
+      .then ~>
+      , ~>
+        ...
+
+    @delete = (i) ~>
+      memo = select i
+      memo.remove!
+      .then ~>
+        index = @memos.indexOf memo
+        @memos.splice index, 1 unless index == -1
+      , ~>
+        ...

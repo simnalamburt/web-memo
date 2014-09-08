@@ -36,8 +36,7 @@ post '/memos' do
   # No empty memo
   return 400 if !content || content.empty?
 
-  memos.insert content: content
-  200
+  json memos.insert content: content
 end
 
 put '/memos/:id' do |id|
