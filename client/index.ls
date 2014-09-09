@@ -22,8 +22,7 @@ angular
     @update = (i) ~>
       select i
       .put!
-      .then ~>
-      , ~>
+      .catch ~>
         ...
 
     @delete = (i) ~>
