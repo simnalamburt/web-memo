@@ -3,7 +3,7 @@ require 'sinatra/json'
 require 'json'
 require 'sequel'
 
-set :protection, :except => [:json_csrf]
+set :protection, except: :json_csrf
 
 
 
