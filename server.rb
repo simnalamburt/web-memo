@@ -3,6 +3,7 @@ require 'sinatra/json'
 require 'json'
 require 'sequel'
 
+set :port, 9494
 set :protection, except: :json_csrf
 
 
