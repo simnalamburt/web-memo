@@ -1,13 +1,12 @@
-# npm
-/node_modules
-
-# bower
-/client/lib
+# Dependencies
+/.bundle/lib/
+/node_modules/
+/client/lib/
 
 # DB & backups
-/db/data.db
-/db/data.db-journal
-/db/backups
+/db/data.db/
+/db/data.db-journal/
+/db/backups/
 
-# build results
-/public
+# Build results
+/public/
