@@ -13,7 +13,8 @@ Dead-simple memo webapp
 ### Instructions
 ```bash
 # Install dependencies
-npm install; bower install; bundle install
+bundle
+yarn
 
 # Build frontend
 gulp
