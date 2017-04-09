@@ -19,8 +19,8 @@ yarn
 # Build frontend
 yarn build
 
-# Start server at 0.0.0.0:4567
-ruby server.rb
+# Start server at 0.0.0.0:9494
+bundle exec run
 ```
 
 ```bash
