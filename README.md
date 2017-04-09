@@ -17,7 +17,7 @@ bundle
 yarn
 
 # Build frontend
-gulp
+yarn build
 
 # Start server at 0.0.0.0:4567
 ruby server.rb

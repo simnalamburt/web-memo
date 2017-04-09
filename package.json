@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "install": "bower install"
+    "install": "bower install",
+    "build": "gulp"
   },
   "devDependencies": {
     "bower": "^1.8.0",
