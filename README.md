@@ -3,7 +3,7 @@ web-memo
 
 Dead-simple memo webapp
 
-![](example/screenshot.png)
+![](doc/screenshot.png)
 
 ### Prerequisites
 - Ruby *≥ 2.1*

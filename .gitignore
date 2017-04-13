@@ -1,11 +1,11 @@
 # Dependencies
-/.bundle/lib/
-/node_modules/
+/client/node_modules/
+/server/.bundle/lib/
 
 # DB & backups
-/db/data.db
-/db/data.db-journal
-/db/backups/
+/server/db/data.db
+/server/db/data.db-journal
+/server/db/backups/
 
 # Build results
-/public/
+/server/public/
