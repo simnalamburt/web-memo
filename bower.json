@@ -1,9 +1,0 @@
-{ "name": "hyeon-me"
-, "dependencies":
-  { "normalize-css": "^3.0.1"
-  , "fontawesome": "^4.2.0"
-  , "angular": "^1.2.23"
-  , "angular-elastic": "^2.4.0"
-  , "restangular": "^1.4.0"
-  }
-}

@@ -1,7 +1,6 @@
 # Dependencies
 /.bundle/lib/
 /node_modules/
-/client/lib/
 
 # DB & backups
 /db/data.db
