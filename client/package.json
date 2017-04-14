@@ -5,5 +5,8 @@
     "font-awesome": "^4.7.0",
     "normalize.css": "^6.0.0",
     "restangular": "^1.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^2.4.0"
   }
 }
