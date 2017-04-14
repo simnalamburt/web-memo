@@ -2,11 +2,14 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// Always enabled plugins
-let plugins = [
-  // Extract CSS files to the 'bundle.css'.
-  new ExtractTextPlugin('_.css'),
-];
+// TODO: postcss
+// TODO: autoprefixer
+
+let devtool = undefined;
+if (process.env.NODE_ENV !== 'production') {
+  // Development-mode only
+  devtool = 'source-map';
+}
 
 module.exports = {
   entry: './src/index.js',
@@ -34,5 +37,6 @@ module.exports = {
       },
     ]
   },
-  plugins
+  plugins: [new ExtractTextPlugin('_.css')],
+  devtool,
 };
