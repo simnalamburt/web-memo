@@ -6,6 +6,3 @@
 /server/db/data.db
 /server/db/data.db-journal
 /server/db/backups/
-
-# Build results
-/server/public/
