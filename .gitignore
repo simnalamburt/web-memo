@@ -3,7 +3,7 @@
 /server/.bundle/lib/
 
 # Build results
-/server/public/_bundle.js
+/server/public/dist/
 
 # DB & backups
 /server/db/data.db

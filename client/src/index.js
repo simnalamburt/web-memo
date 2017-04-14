@@ -1,7 +1,9 @@
 import angular from 'angular'
 import 'angular-elastic'
 import 'restangular'
-// TODO: Import CSS modules (font-awesome, normalize.css)
+
+import 'font-awesome/css/font-awesome.css'
+import 'normalize.css'
 // TODO: Import index.styl
 
 // TODO: Modernize js codes
