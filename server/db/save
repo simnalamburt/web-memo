@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'date'
 
 source = 'data.db'
@@ -12,6 +15,6 @@ if $?.success?
   puts ' * 백업 완료'
 else
   puts ' ! 백업 실패'
-  puts " - bzip2 has returned '#{$?.exitstatus}'"
+  puts " - xz has returned '#{$?.exitstatus}'"
   exit 1
 end

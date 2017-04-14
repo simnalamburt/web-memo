@@ -32,12 +32,12 @@ Backup DB:
 cd server/db/
 
 # Make a new backup
-ruby save.rb
+./save
 #   data.db => backups/140403_120000_000
 # * 백업 완료!
 
 # Restore the old backup
-ruby load.rb backups/140403_120000_000
+./load backups/140403_120000_000
 #   backups/140403_120000_000 => data.db
 # * 복구 완료!
 ```

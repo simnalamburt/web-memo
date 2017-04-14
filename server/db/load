@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
 if ARGV.empty?
   print <<-MESSAGE
 어느 백업을 복구시킬지 지정해주세요
@@ -22,6 +25,6 @@ if $?.success?
   puts ' * 복구 완료'
 else
   puts ' ! 복구 실패'
-  puts " - bzip2 has returned '#{$?.exitstatus}'"
+  puts " - xz has returned '#{$?.exitstatus}'"
   exit 1
 end
