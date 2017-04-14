@@ -16,8 +16,22 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(?:png|(?:woff2?|ttf|eot|svg)(?:\?v=[0-9]\.[0-9]\.[0-9])?)$/, use: 'file-loader?name=static/[hash].[ext]' },
-      { test: /\.css$/, use: ExtractTextPlugin.extract({ use: 'css-loader' }) }
+      {
+        test: /\.(?:jpg|png|(?:woff2?|ttf|eot|svg)(?:\?v=[0-9]\.[0-9]\.[0-9])?)$/,
+        use: 'file-loader?name=static/[hash].[ext]'
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'stylus-loader']
+        })
+      },
     ]
   },
   plugins

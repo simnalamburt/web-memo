@@ -4,7 +4,7 @@ import 'restangular'
 
 import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
-// TODO: Import index.styl
+import './index.styl'
 
 // TODO: Modernize js codes
 angular.module('hyeonme', ['monospaced.elastic', 'restangular']).controller('MemoCtrl', function($scope, Restangular){
