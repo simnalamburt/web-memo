@@ -2,6 +2,9 @@
 /client/node_modules/
 /server/.bundle/lib/
 
+# Build results
+/server/public/_bundle.js
+
 # DB & backups
 /server/db/data.db
 /server/db/data.db-journal

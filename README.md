@@ -11,20 +11,25 @@ Dead-simple memo webapp
 - xz
 
 ### Instructions
+Frontend:
 ```bash
-# Install dependencies
-bundle
-yarn
+cd client/
 
-# Build frontend
-yarn build
-
-# Start server at 0.0.0.0:9494
-bundle exec run
+yarn            # Download dependencies
+yarn webpack    # Build front-end codes
 ```
 
+Backend:
 ```bash
-cd db
+cd server/
+
+bundle          # Download dependencies
+bundle exec run # Start server at 0.0.0.0:9494
+```
+
+Backup DB:
+```bash
+cd server/db/
 
 # Make a new backup
 ruby save.rb
