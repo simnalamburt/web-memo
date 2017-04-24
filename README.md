@@ -2,11 +2,11 @@ web-memo
 ========
 Dead-simple memo webapp
 
-![](doc/screenshot.png)
+![Screenshot]
 
 ### Prerequisites
-- [Ruby](https://www.ruby-lang.org) *≥ 2.2*, [Bundler](https://bundler.io/)
-- [Node.js](https://nodejs.org) *≥ 6.0.0*, [Yarn](https://yarnpkg.com/lang/en/)
+- [Ruby] *≥ 2.2*, [Bundler]
+- [Node.js] *≥ 6.0.0*, [Yarn]
 
 ```bash
 (cd client && yarn && yarn webpack) && (cd server && bundle && bundle exec run)
@@ -48,3 +48,19 @@ cd server/db/
 #   backups/140403_120000_000 => data.db
 # * 복구 완료!
 ```
+
+<br>
+
+--------
+*web-memo* is primarily distributed under the terms of both the [MIT license]
+and the [Apache License (Version 2.0)]. See [COPYRIGHT] for details.
+
+[Screenshot]: doc/screenshot.png
+[Ruby]: https://www.ruby-lang.org
+[Bundler]: https://bundler.io/
+[Node.js]: https://nodejs.org
+[Yarn]: https://yarnpkg.com/lang/en/
+[`xz`]: https://tukaani.org/xz/
+[MIT license]: LICENSE-MIT
+[Apache License (Version 2.0)]: LICENSE-APACHE
+[COPYRIGHT]: COPYRIGHT
