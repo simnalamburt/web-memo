@@ -2,9 +2,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// TODO: postcss
-// TODO: autoprefixer
-
 let devtool = undefined;
 if (process.env.NODE_ENV !== 'production') {
   // Development-mode only

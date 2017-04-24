@@ -6,8 +6,6 @@ import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
 import './index.styl'
 
-// TODO: babel
-// TODO: Modernize js codes
 angular
 .module('hyeonme', ['monospaced.elastic', 'restangular'])
 .controller('MemoCtrl', ['$scope', 'Restangular', ($scope, Restangular) => {
