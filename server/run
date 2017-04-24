@@ -7,9 +7,9 @@ require 'sequel'
 
 set :port, 9494
 
-
-
-### Model
+#
+# Model
+#
 DB = Sequel.sqlite 'db/data.db'
 memos = DB[:memos]
 
@@ -26,9 +26,9 @@ Hello, World!\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras i
   B
 end
 
-
-
-### Controller
+#
+# Controller
+#
 get '/memos' do
   json memos.all.reverse
 end
@@ -56,9 +56,7 @@ delete '/memos/:id' do |id|
   200
 end
 
-
-
-# (development mode only)
+# NOTE: Development mode only code
 get '/' do
   File.read('public/index.html')
 end
