@@ -12,7 +12,7 @@ angular
 .controller('MemoCtrl', ['$scope', 'Restangular', ($scope, Restangular) => {
   const all = Restangular.all('memos');
   const memos = all.getList().$object;
-  const select = i => _.find(memos, it => it.id === i);
+  const select = i => memos.find(memo => memo.id === i);
 
   $scope.memos = memos;
 
