@@ -1,25 +1,32 @@
 web-memo
 ========
-
 Dead-simple memo webapp
 
 ![](doc/screenshot.png)
 
 ### Prerequisites
-- Ruby *≥ 2.1*
-- Node.js *≥ 0.10*
-- xz
+- [Ruby](https://www.ruby-lang.org) *≥ 2.2*, [Bundler](https://bundler.io/)
+- [Node.js](https://nodejs.org) *≥ 6.0.0*, [Yarn](https://yarnpkg.com/lang/en/)
 
-### Instructions
-Frontend:
+```bash
+(cd client && yarn && yarn webpack) && (cd server && bundle && bundle exec run)
+```
+
+<br>
+
+Instructions
+--------
+How to build frontend codes:
 ```bash
 cd client/
 
 yarn            # Download dependencies
 yarn webpack    # Build front-end codes
+
+yarn watch      # Run webpack in watch mode
 ```
 
-Backend:
+Turn on the server:
 ```bash
 cd server/
 
@@ -27,7 +34,7 @@ bundle          # Download dependencies
 bundle exec run # Start server at 0.0.0.0:9494
 ```
 
-Backup DB:
+How to backup the DB: (You need [`xz`](https://tukaani.org/xz/) command line utility)
 ```bash
 cd server/db/
 

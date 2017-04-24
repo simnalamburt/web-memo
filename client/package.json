@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "watch": "yarn webpack -- --watch"
+  },
   "dependencies": {
     "angular": "^1.6.4",
     "angular-elastic": "^2.5.1",
