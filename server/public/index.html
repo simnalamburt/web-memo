@@ -12,11 +12,11 @@
 <body ng-controller="MemoCtrl">
 
 <img src="logo.png">
-<div id=write>
+<form id=write>
   <textarea msd-elastic="\n" ng-model="new.content" ng-blur="create()"
     placeholder="New Memo"></textarea>
-  <a href=true><i class="fa fa-lg fa-pencil"></i></a>
-</div>
+  <button type=submit><i class="fa fa-lg fa-pencil"></i></button>
+</form>
 <div id=result class=conainer>
   <div ng-repeat="memo in memos track by memo.id">
     <textarea msd-elastic="\n" ng-model="memo.content" ng-blur="update(memo.id)"></textarea>
