@@ -6,49 +6,48 @@ import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
 import './index.styl'
 
+// TODO: babel
 // TODO: Modernize js codes
-angular.module('hyeonme', ['monospaced.elastic', 'restangular']).controller('MemoCtrl', function($scope, Restangular){
-  return (function(){
-    var all, select, this$ = this;
-    all = Restangular.all('memos');
-    select = function(i){
-      return _.find(this$.memos, function(it){
-        return it.id === i;
-      });
-    };
-    this.memos = all.getList().$object;
-    this.create = function(){
-      if (!this$['new'].content) {
-        return;
-      }
-      return all.post(this$['new']).then(function(id){
-        this$['new'].id = id;
-        this$.memos.unshift(Restangular.restangularizeElement(this$.parentResource, this$['new'], 'memos'));
-        return this$['new'] = {};
-      }, function(){
-        throw Error('unimplemented');
-      });
-    };
-    this.update = function(i){
-      return select(i).put()['catch'](function(){
-        throw Error('unimplemented');
-      });
-    };
-    return this['delete'] = function(i){
-      var memo;
-      memo = select(i);
-      return memo.remove().then(function(){
-        var index;
-        index = this$.memos.indexOf(memo);
-        if (index !== -1) {
-          return this$.memos.splice(index, 1);
-        }
-      }, function(){
-        throw Error('unimplemented');
-      });
-    };
-  }.call($scope));
-});
+angular
+.module('hyeonme', ['monospaced.elastic', 'restangular'])
+.controller('MemoCtrl', ['$scope', 'Restangular', ($scope, Restangular) => {
+  const all = Restangular.all('memos');
+  const memos = all.getList().$object;
+  const select = i => _.find(memos, it => it.id === i);
+
+  $scope.memos = memos;
+
+  $scope.create = _ => {
+    if ($scope.new == null || $scope.new.content == null) { return; }
+
+    return all.post($scope.new)
+      .then(id => {
+        $scope.new.id = id;
+
+        const elem = Restangular.restangularizeElement($scope.parentResource, $scope.new, 'memos');
+        memos.unshift(elem);
+
+        $scope.new = {};
+        return $scope.new;
+      })
+      .catch(_ => { throw Error('unimplemented'); });
+  };
+
+  $scope.update = i => select(i).put()
+    .catch(_ => { throw Error('unimplemented'); });
+
+  $scope.delete = i => {
+    const memo = select(i);
+    return memo.remove()
+      .then(_ => {
+        const index = memos.indexOf(memo);
+        if (index !== -1) { return memos.splice(index, 1); }
+      })
+      .catch(_ => { throw Error('unimplemented'); });
+  };
+
+  return $scope;
+}]);
 
 // Google Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
