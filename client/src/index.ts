@@ -12,15 +12,15 @@ angular
 .controller('MemoCtrl', ['$scope', 'Restangular', ($scope, Restangular) => {
   const all = Restangular.all('memos');
   const memos = all.getList().$object;
-  const select = i => memos.find(memo => memo.id === i);
+  const select = (i: number) => memos.find((memo: { id: number }) => memo.id === i);
 
   $scope.memos = memos;
 
-  $scope.create = _ => {
+  $scope.create = () => {
     if ($scope.new == null || $scope.new.content == null) { return; }
 
     return all.post($scope.new)
-      .then(id => {
+      .then((id: number) => {
         $scope.new.id = id;
 
         const elem = Restangular.restangularizeElement($scope.parentResource, $scope.new, 'memos');
@@ -29,20 +29,20 @@ angular
         $scope.new = {};
         return $scope.new;
       })
-      .catch(_ => { throw Error('unimplemented'); });
+      .catch(() => { throw Error('unimplemented'); });
   };
 
-  $scope.update = i => select(i).put()
-    .catch(_ => { throw Error('unimplemented'); });
+  $scope.update = (i: number) => select(i).put()
+    .catch(() => { throw Error('unimplemented'); });
 
-  $scope.delete = i => {
+  $scope.delete = (i: number) => {
     const memo = select(i);
     return memo.remove()
-      .then(_ => {
+      .then(() => {
         const index = memos.indexOf(memo);
         if (index !== -1) { return memos.splice(index, 1); }
       })
-      .catch(_ => { throw Error('unimplemented'); });
+      .catch(() => { throw Error('unimplemented'); });
   };
 
   return $scope;
