@@ -9,7 +9,8 @@ Dead-simple memo webapp
 - [Node.js] *≥ 6.0.0*, [Yarn]
 
 ```bash
-(cd client && yarn && yarn build) && (cd server && bundle && bundle exec run)
+(cd client && yarn && yarn build) && (cd server &&
+    bundle && RACK_ENV=production bundle exec run)
 ```
 
 <br>
@@ -20,19 +21,21 @@ How to build frontend codes:
 ```bash
 cd client/
 
-yarn            # Download dependencies
-yarn build      # Build front-end codes in production mode
+yarn              # Download dependencies
+yarn watch        # Watch for the changes & build front-end
+                  # codes in development mode
 
-yarn watch      # Watch for the changes & build front-end
-                # codes in development mode
+yarn build        # Build front-end codes in production mode
 ```
 
 Turn on the server:
 ```bash
 cd server/
 
-bundle          # Download dependencies
-bundle exec run # Start server at 0.0.0.0:9494
+bundle            # Download dependencies
+bundle exec run   # Start server at 0.0.0.0:9494 in development mode
+
+RACK_ENV=production bundle exec run   # Start server in production mode
 ```
 
 How to backup the DB: (You need [`xz`](https://tukaani.org/xz/) command line utility)
