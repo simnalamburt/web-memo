@@ -1,16 +1,15 @@
 'use strict'
 
 const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 
-let devtool = undefined
-if (process.env.NODE_ENV !== 'production') {
-  // Development-mode only
-  devtool = 'source-map'
-}
-
-module.exports = {
+//
+// Common configs
+//
+const commonConfigs = {
   entry: './src/index.ts',
   output: {
     filename: '_.js',
@@ -44,5 +43,26 @@ module.exports = {
     new ExtractTextPlugin('_.css'),
     new CheckerPlugin()
   ],
-  devtool
 }
+
+//
+// Development-mode configs
+//
+const devConfigs = {
+  devtool: 'source-map'
+}
+
+//
+// Production-mode configs
+//
+const productionConfigs = {
+  plugins: [
+    new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') })
+  ]
+}
+
+module.exports = env => env === 'production' ?
+  merge(commonConfigs, productionConfigs) :
+  merge(commonConfigs, devConfigs)
