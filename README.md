@@ -9,8 +9,7 @@ Dead-simple memo webapp
 - [Node.js] *≥ 6.0.0*, [Yarn]
 
 ```bash
-(cd client && yarn && yarn build) && (cd server &&
-    bundle && RACK_ENV=production bundle exec run)
+(cd client && yarn && yarn build) && (cd server && bundle && bundle exec run)
 ```
 
 <br>
@@ -22,10 +21,10 @@ How to build frontend codes:
 cd client/
 
 yarn              # Download dependencies
+yarn build        # Build front-end codes in production mode
+
 yarn watch        # Watch for the changes & build front-end
                   # codes in development mode
-
-yarn build        # Build front-end codes in production mode
 ```
 
 Turn on the server:
