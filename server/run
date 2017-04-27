@@ -56,7 +56,9 @@ delete '/memos/:id' do |id|
   200
 end
 
-# NOTE: Development mode only code
-get '/' do
-  File.read('public/index.html')
+if settings.environment != :production
+  # Codes below will not be executed in production mode
+  get '/' do
+    File.read('public/index.html')
+  end
 end
