@@ -12,13 +12,17 @@ import './style.css'
 // TODO: Update @types/restangular
 declare const restangular = 'restangular'
 
+
+// Type declaration
+interface Memo { id: number, content: string }
 interface MainController {
-  memos: any[], // TODO
-  new: any, // TODO
-  create(): angular.IPromise<any> | undefined, // TODO
-  update(i: number): Promise<any>, // TODO
-  delete(i: number): Promise<any>, // TODO
+  memos: Memo[],
+  newContent: string,
+  create(): angular.IPromise<void> | undefined,
+  update(i: number): Promise<void>,
+  delete(i: number): Promise<void>,
 }
+
 
 function MainController(this: MainController, Restangular: restangular.IService) {
   const all = Restangular.all('memos')
@@ -28,17 +32,16 @@ function MainController(this: MainController, Restangular: restangular.IService)
   this.memos = memos
 
   this.create = () => {
-    if (this.new == null || this.new.content == null) { return }
+    const content = this.newContent
+    if (content == null || content.length === 0) { return }
 
-    return all.post(this.new)
+    return all.post({ content })
       .then((id: number) => {
-        this.new.id = id
+        this.newContent = ''
 
-        const elem = Restangular.restangularizeElement(undefined, this.new, 'memos')
+        const newMemo: Memo = { id, content }
+        const elem = Restangular.restangularizeElement(undefined, newMemo, 'memos')
         memos.unshift(elem)
-
-        this.new = {}
-        return this.new
       })
       .catch(() => { throw Error('unimplemented') })
   }
@@ -57,6 +60,7 @@ function MainController(this: MainController, Restangular: restangular.IService)
   }
 }
 
+
 angular
-.module('hyeonme', ['monospaced.elastic', restangular])
-.controller('MainController', ['Restangular', MainController])
+  .module('hyeonme', ['monospaced.elastic', restangular])
+  .controller('MainController', ['Restangular', MainController])
