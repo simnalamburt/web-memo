@@ -7,7 +7,7 @@ import './ga.js'
 // Stylesheets
 import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
-import './style.css'
+import './index.css'
 
 // Angular module definition
 angular

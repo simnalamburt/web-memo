@@ -4,6 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 
 //
@@ -12,15 +13,16 @@ const { CheckerPlugin } = require('awesome-typescript-loader')
 const commonConfigs = {
   entry: './src/index.ts',
   output: {
-    filename: '_.js',
-    path: path.resolve(__dirname, '../server/public/dist')
+    filename: '[hash].js',
+    path: path.resolve(__dirname, '../server/public')
   },
   module: {
     rules: [
+      { test: /\.html$/, use: 'html-loader' },
       { test: /\.ts$/, use: 'awesome-typescript-loader' },
       {
         test: /\.(?:jpg|png|(?:woff2?|ttf|eot|svg)(?:\?v=[0-9]\.[0-9]\.[0-9])?)$/,
-        use: 'file-loader?name=static/[hash].[ext]'
+        use: 'file-loader?name=[hash].[ext]'
       },
       {
         test: /\.css$/,
@@ -32,8 +34,9 @@ const commonConfigs = {
     extensions: ['.ts', '.js']
   },
   plugins: [
-    new ExtractTextPlugin('_.css'),
-    new CheckerPlugin()
+    new ExtractTextPlugin('[hash].css'),
+    new HtmlWebpackPlugin({ template: 'src/index.html' }),
+    new CheckerPlugin(),
   ],
 }
 

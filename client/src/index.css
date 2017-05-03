@@ -1,5 +1,5 @@
-@import url("http://fonts.googleapis.com/css?family=Titillium+Web:400,600");
-@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+@import url('http://fonts.googleapis.com/css?family=Titillium+Web:400,600');
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 html {
   min-height: 100vh;
-  background: url("bkground.jpg") center/cover fixed;
+  background: url('./img/bkground.jpg') center/cover fixed;
 }
 
 body {
@@ -70,7 +70,7 @@ textarea {
     }
   }
 
-  & > button[type="submit"] {
+  & > button[type='submit'] {
     position: absolute;
     border: none;
     background: none;
