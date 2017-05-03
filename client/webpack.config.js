@@ -24,9 +24,7 @@ const commonConfigs = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader'
-        })
+        use: ExtractTextPlugin.extract(['css-loader', 'postcss-loader'])
       }
     ]
   },
