@@ -9,7 +9,7 @@ import './style.css'
 
 angular
 .module('hyeonme', ['monospaced.elastic', 'restangular'])
-.controller('MemoCtrl', ['$scope', 'Restangular', ($scope, Restangular) => {
+.controller('MemoController', ['$scope', 'Restangular', ($scope, Restangular) => {
   const all = Restangular.all('memos')
   const memos = all.getList().$object
   const select = (i: number) => memos.find((memo: { id: number }) => memo.id === i)
