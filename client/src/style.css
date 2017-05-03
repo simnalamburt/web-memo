@@ -1,12 +1,15 @@
 @import url("http://fonts.googleapis.com/css?family=Titillium+Web:400,600");
 @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
 * {
   box-sizing: border-box;
 }
+
 html {
   min-height: 100vh;
   background: url("bkground.jpg") center/cover fixed;
 }
+
 body {
   min-height: 100vh;
   padding: 130px 0 20px 0;
@@ -15,100 +18,103 @@ body {
   font: 14px 'Titillium Web', 'Nanum Gothic', sans-serif;
   line-height: 24px;
 }
+
 img {
   display: block;
   width: 500px;
   margin: 0 auto;
 }
+
 textarea {
   width: 100%;
   height: 40px;
   font-size: 1.2em;
   background-color: rgba(255,255,255,0.95);
+
+  /* reset styles */
   display: block;
   border: none;
   resize: none;
   outline: none;
   overflow: hidden;
 }
+
 #write {
   max-width: 600px;
   margin: 40px auto 80px auto;
   padding: 0 20px;
   position: relative;
+
+  & > textarea {
+    height: 60px;
+    padding: 12px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 7px;
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+
+    transition: height 0.2s, min-height 0.2s;
+
+    &::placeholder {
+      font-size: 1.8em;
+      text-align: center;
+      line-height: 48px;
+      transition: color 0.2s;
+    }
+
+    &:focus {
+      min-height: 200px;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  & > button[type="submit"] {
+    position: absolute;
+    border: none;
+    background: none;
+    outline: none;
+    right: 50px;
+    bottom: 28px;
+    color: #1abc9c;
+  }
 }
-#write > textarea {
-  height: 60px;
-  padding: 12px;
-  border: 2px solid rgba(0,0,0,0.1);
-  border-radius: 7px;
-  box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
-  transition: height 0.2s, min-height 0.2s;
-}
-#write > textarea::placeholder {
-  font-size: 1.8em;
-  text-align: center;
-  line-height: 48px;
-  transition: color 0.2s;
-}
-#write > textarea:focus {
-  min-height: 200px;
-}
-#write > textarea:focus::placeholder {
-  color: transparent;
-}
-#write > button[type="submit"] {
-  position: absolute;
-  border: none;
-  background: none;
-  outline: none;
-  right: 50px;
-  bottom: 28px;
-  color: #1abc9c;
-}
+
+
 #result {
   margin: 0 auto;
   padding: 0 15px;
+
+  @media (min-width: 768px) { width: 750px; }
+  @media (min-width: 992px) { width: 970px; }
+  @media (min-width: 1200px) { width: 1170px; }
+
   column-count: 3;
   column-gap: 20px;
-}
-@media (min-width: 768px) {
-  #result {
-    width: 750px;
+
+  & > div {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+
+    & > textarea {
+      margin: 5px 0;
+      border: 8px solid transparent;
+      padding: 4px;
+      box-shadow: 0 3px 0 rgba(0,0,0,0.08);
+      transition: height 0.2s, min-height 0.2s, border-color 0.2s;
+
+      &:focus { border-color: rgba(0,0,0,0.05); }
+    }
+
+    & > a {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      color: rgba(0,0,0,0.2);
+
+      &:focus, &:hover { color: rgba(0,0,0,0.5); }
+    }
   }
-}
-@media (min-width: 992px) {
-  #result {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  #result {
-    width: 1170px;
-  }
-}
-#result > div {
-  display: inline-block;
-  width: 100%;
-  position: relative;
-}
-#result > div > textarea {
-  margin: 5px 0;
-  border: 8px solid transparent;
-  padding: 4px;
-  box-shadow: 0 3px 0 rgba(0,0,0,0.08);
-  transition: height 0.2s, min-height 0.2s, border-color 0.2s;
-}
-#result > div > textarea:focus {
-  border-color: rgba(0,0,0,0.05);
-}
-#result > div > a {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  color: rgba(0,0,0,0.2);
-}
-#result > div > a:focus,
-#result > div > a:hover {
-  color: rgba(0,0,0,0.5);
 }
