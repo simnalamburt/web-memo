@@ -1,15 +1,19 @@
 import angular from 'angular'
 import 'angular-elastic'
-import 'restangular'
+import restangular from 'restangular'
 import './ga.js'
 
+// Stylesheets
 import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
 import './style.css'
 
-angular
-.module('hyeonme', ['monospaced.elastic', 'restangular'])
-.controller('MemoController', ['$scope', 'Restangular', ($scope, Restangular) => {
+
+// TODO: Update @types/restangular
+declare const restangular = 'restangular'
+
+
+function MemoController($scope: angular.IScope, Restangular: restangular.IService) {
   const all = Restangular.all('memos')
   const memos = all.getList().$object
   const select = (i: number) => memos.find((memo: { id: number }) => memo.id === i)
@@ -40,10 +44,12 @@ angular
     return memo.remove()
       .then(() => {
         const index = memos.indexOf(memo)
-        if (index !== -1) { return memos.splice(index, 1) }
+        if (index !== -1) { memos.splice(index, 1) }
       })
       .catch(() => { throw Error('unimplemented') })
   }
+}
 
-  return $scope
-}])
+angular
+.module('hyeonme', ['monospaced.elastic', restangular])
+.controller('MemoController', ['$scope', 'Restangular', MemoController])

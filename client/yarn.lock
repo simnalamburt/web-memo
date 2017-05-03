@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/angular@^1.6.16":
+"@types/angular@*", "@types/angular@^1.6.16":
   version "1.6.16"
   resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.16.tgz#f649ef28dd56311a7d8c10be19af879a2a3a9151"
   dependencies:
@@ -11,6 +11,12 @@
 "@types/jquery@*":
   version "2.0.42"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.42.tgz#57cdb1a0f610ddad488adf620e40f8d07ff3ecdf"
+
+"@types/restangular@^1.5.34":
+  version "1.5.34"
+  resolved "https://registry.yarnpkg.com/@types/restangular/-/restangular-1.5.34.tgz#cb6a60980c15a0c72fac9b7fa97c861f1be62a6b"
+  dependencies:
+    "@types/angular" "*"
 
 abbrev@1:
   version "1.1.0"
