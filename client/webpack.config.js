@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 
 //
@@ -54,7 +55,8 @@ const productionConfigs = {
   plugins: [
     new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
     new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') })
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+    new CompressionPlugin({ test: /\.(?:css|js|svg|eot|ttf|html)$/ }),
   ]
 }
 
