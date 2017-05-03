@@ -13,7 +13,7 @@ import './style.css'
 declare const restangular = 'restangular'
 
 
-function MemoController($scope: angular.IScope, Restangular: restangular.IService) {
+function MainController($scope: angular.IScope, Restangular: restangular.IService) {
   const all = Restangular.all('memos')
   const memos = all.getList().$object
   const select = (i: number) => memos.find((memo: { id: number }) => memo.id === i)
@@ -52,4 +52,4 @@ function MemoController($scope: angular.IScope, Restangular: restangular.IServic
 
 angular
 .module('hyeonme', ['monospaced.elastic', restangular])
-.controller('MemoController', ['$scope', 'Restangular', MemoController])
+.controller('MainController', ['$scope', 'Restangular', MainController])
