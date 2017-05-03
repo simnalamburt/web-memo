@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ES2017", "Dom.Iterable"],
     "module": "ES2015",
     "moduleResolution": "Node",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "pretty": true,
     "removeComments": true,
     "sourceMap": true,
-    "strictNullChecks": true,
+    "strict": true,
     "target": "ES3"
   }
 }
