@@ -5,7 +5,7 @@ import './ga.js'
 
 import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
-import './index.styl'
+import './style.css'
 
 angular
 .module('hyeonme', ['monospaced.elastic', 'restangular'])

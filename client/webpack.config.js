@@ -27,12 +27,6 @@ const commonConfigs = {
         use: ExtractTextPlugin.extract({
           use: 'css-loader'
         })
-      },
-      {
-        test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'stylus-loader']
-        })
       }
     ]
   },
