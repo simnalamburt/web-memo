@@ -12,34 +12,41 @@ import './style.css'
 // TODO: Update @types/restangular
 declare const restangular = 'restangular'
 
+interface MainController {
+  memos: any[], // TODO
+  new: any, // TODO
+  create(): angular.IPromise<any> | undefined, // TODO
+  update(i: number): Promise<any>, // TODO
+  delete(i: number): Promise<any>, // TODO
+}
 
-function MainController($scope: angular.IScope, Restangular: restangular.IService) {
+function MainController(this: MainController, Restangular: restangular.IService) {
   const all = Restangular.all('memos')
   const memos = all.getList().$object
   const select = (i: number) => memos.find((memo: { id: number }) => memo.id === i)
 
-  $scope.memos = memos
+  this.memos = memos
 
-  $scope.create = () => {
-    if ($scope.new == null || $scope.new.content == null) { return }
+  this.create = () => {
+    if (this.new == null || this.new.content == null) { return }
 
-    return all.post($scope.new)
+    return all.post(this.new)
       .then((id: number) => {
-        $scope.new.id = id
+        this.new.id = id
 
-        const elem = Restangular.restangularizeElement($scope.parentResource, $scope.new, 'memos')
+        const elem = Restangular.restangularizeElement(undefined, this.new, 'memos')
         memos.unshift(elem)
 
-        $scope.new = {}
-        return $scope.new
+        this.new = {}
+        return this.new
       })
       .catch(() => { throw Error('unimplemented') })
   }
 
-  $scope.update = (i: number) => select(i).put()
+  this.update = (i: number) => select(i).put()
     .catch(() => { throw Error('unimplemented') })
 
-  $scope.delete = (i: number) => {
+  this.delete = (i: number) => {
     const memo = select(i)
     return memo.remove()
       .then(() => {
@@ -52,4 +59,4 @@ function MainController($scope: angular.IScope, Restangular: restangular.IServic
 
 angular
 .module('hyeonme', ['monospaced.elastic', restangular])
-.controller('MainController', ['$scope', 'Restangular', MainController])
+.controller('MainController', ['Restangular', MainController])
