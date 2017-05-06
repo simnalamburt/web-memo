@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "watch": "yarn webpack -- --watch",
-    "build": "yarn webpack -- --env=production --progress"
+    "watch": "webpack --watch",
+    "build": "webpack --env=production --progress"
   },
   "dependencies": {
     "@types/angular": "^1.6.16",
