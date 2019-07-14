@@ -8,7 +8,8 @@
     "prettier:fix": "prettier --write '**/*.{js,ts,scss}'"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@types/angular": "^1.6.55",
     "@types/restangular": "^1.5.44",
     "angular": "^1.7.8",
