@@ -9,11 +9,11 @@
     "test": "tsc --noEmit && prettier --check '**/*.{js,ts,scss}'"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "@types/angular": "^1.6.55",
     "@types/restangular": "^1.5.44",
     "angular": "^1.7.8",
     "angular-elastic": "^2.5.1",
-    "font-awesome": "^4.7.0",
     "normalize.css": "^8.0.1",
     "restangular": "^1.6.1"
   },

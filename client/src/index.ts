@@ -4,7 +4,7 @@ import 'angular-elastic'
 import MainController from './main.controller'
 
 // Stylesheets
-import 'font-awesome/css/font-awesome.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 import 'normalize.css'
 import './index.scss'
 

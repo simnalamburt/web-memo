@@ -17,12 +17,12 @@
 <form id=write>
   <textarea msd-elastic="\n" ng-model="main.newContent" ng-blur="main.create()"
     placeholder="New Memo"></textarea>
-  <button type=submit><i class="fa fa-lg fa-pencil"></i></button>
+  <button type=submit><i class="fas fa-lg fa-pencil-alt"></i></button>
 </form>
 <div id=result class=conainer>
   <div ng-repeat="memo in main.memos track by memo.id">
     <textarea msd-elastic="\n" ng-model="memo.content" ng-blur="main.update(memo.id)"></textarea>
-    <a ng-click="main.delete(memo.id)"><i class="fa fa-times"></i></a>
+    <a ng-click="main.delete(memo.id)"><i class="fas fa-times"></i></a>
   </div>
 </div>
 
