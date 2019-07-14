@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 require 'sinatra'
-require 'sinatra/json'
 require 'json'
 require 'sequel'
 
@@ -30,7 +29,8 @@ end
 # Controller
 #
 get '/memos' do
-  json memos.all.reverse
+  content_type :json
+  memos.all.reverse.to_json
 end
 
 post '/memos' do
@@ -40,7 +40,8 @@ post '/memos' do
   # No empty memo
   return 400 if !content || content.empty?
 
-  json memos.insert content: content
+  content_type :json
+  memos.insert(content: content).to_json
 end
 
 put '/memos/:id' do |id|
