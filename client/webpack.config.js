@@ -37,8 +37,8 @@ const commonConfigs = {
   plugins: [
     new ExtractTextPlugin('[hash].css'),
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
-    new CheckerPlugin(),
-  ],
+    new CheckerPlugin()
+  ]
 }
 
 //
@@ -55,11 +55,14 @@ const productionConfigs = {
   plugins: [
     new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
     new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') }),
-    new CompressionPlugin({ test: /\.(?:css|js|svg|eot|ttf|html)$/ }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new CompressionPlugin({ test: /\.(?:css|js|svg|eot|ttf|html)$/ })
   ]
 }
 
-module.exports = env => env === 'production' ?
-  merge(commonConfigs, productionConfigs) :
-  merge(commonConfigs, devConfigs)
+module.exports = env =>
+  env === 'production'
+    ? merge(commonConfigs, productionConfigs)
+    : merge(commonConfigs, devConfigs)
