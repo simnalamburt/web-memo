@@ -5,8 +5,7 @@
     "build": "webpack-cli --mode=production --progress",
     "build:dev": "webpack-cli --mode=development --progress",
     "prettier": "prettier --check '**/*.{js,ts,scss}'",
-    "prettier:fix": "prettier --write '**/*.{js,ts,scss}'",
-    "test": "tsc --noEmit && prettier --check '**/*.{js,ts,scss}'"
+    "prettier:fix": "prettier --write '**/*.{js,ts,scss}'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
