@@ -2,7 +2,6 @@ import angular from 'angular'
 import 'restangular'
 import 'angular-elastic'
 import MainController from './main.controller'
-import './ga.js'
 
 // Stylesheets
 import 'font-awesome/css/font-awesome.css'
