@@ -9,9 +9,9 @@
     "test": "tsc --noEmit && prettier --check '**/*.{js,ts,scss}'"
   },
   "dependencies": {
-    "@types/angular": "^1.6.16",
-    "@types/restangular": "^1.5.34",
-    "angular": "^1.6.4",
+    "@types/angular": "^1.6.55",
+    "@types/restangular": "^1.5.44",
+    "angular": "^1.7.8",
     "angular-elastic": "^2.5.1",
     "font-awesome": "^4.7.0",
     "normalize.css": "^8.0.1",
@@ -19,19 +19,19 @@
   },
   "devDependencies": {
     "@gfx/zopfli": "^1.0.14",
-    "compression-webpack-plugin": "^3",
-    "css-loader": "^3",
-    "file-loader": "^4",
+    "compression-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "prettier": "^1.18.2",
     "sass": "^1.22.4",
     "sass-loader": "^7.1.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^3",
-    "webpack-merge": "^4.1.0"
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-merge": "^4.2.1"
   }
 }
