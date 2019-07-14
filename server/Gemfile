@@ -3,6 +3,5 @@ source 'https://rubygems.org'
 
 gem 'sinatra', '~> 2.0'
 gem 'sinatra-contrib', '~> 2.0'
-gem 'yajl-ruby', '~> 1.4'
 gem 'sequel', '~> 5.22'
 gem 'sqlite3', '~> 1.4'
