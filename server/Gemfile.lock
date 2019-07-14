@@ -42,4 +42,4 @@ DEPENDENCIES
   yajl-ruby (~> 1.2)
 
 BUNDLED WITH
-   1.14.3
+   2.0.1
