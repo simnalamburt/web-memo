@@ -6,7 +6,7 @@ import MainController from './main.controller'
 // Stylesheets
 import 'font-awesome/css/font-awesome.css'
 import 'normalize.css'
-import './index.css'
+import './index.scss'
 
 // Angular module definition
 angular
