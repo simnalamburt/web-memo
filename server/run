@@ -34,7 +34,6 @@ get '/memos' do
 end
 
 post '/memos' do
-  request.body.rewind
   content = JSON.parse(request.body.read)['content']
 
   # No empty memo
@@ -45,7 +44,6 @@ post '/memos' do
 end
 
 put '/memos/:id' do |id|
-  request.body.rewind
   content = JSON.parse(request.body.read)['content']
 
   memos.where(id: id).update content: content
