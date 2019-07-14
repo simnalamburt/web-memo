@@ -55,10 +55,3 @@ delete '/memos/:id' do |id|
   memos.where(id: id).delete
   200
 end
-
-if settings.environment != :production
-  # Codes below will not be executed in production mode
-  get '/' do
-    File.read('public/index.html')
-  end
-end
