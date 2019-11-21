@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@types/angular": "^1.6.55",
     "@types/restangular": "^1.5.44",
-    "angular": "^1.7.8",
+    "angular": "^1.7.9",
     "angular-elastic": "^2.5.1",
     "normalize.css": "^8.0.1",
     "restangular": "^1.6.1"
