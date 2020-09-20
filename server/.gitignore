@@ -1,6 +1,0 @@
-# Dependencies
-/.bundle/lib/
-
-# DB
-/db/data.db
-/db/data.db-journal
