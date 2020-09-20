@@ -7,16 +7,16 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@types/angular": "^1.6.55",
-    "@types/restangular": "^1.5.44",
     "angular": "^1.8.0",
     "angular-elastic": "^2.5.1",
     "normalize.css": "^8.0.1",
     "restangular": "^1.6.1"
   },
   "devDependencies": {
-    "prettier": "^1.18.2",
-    "typescript": "^3.5.3"
+    "@types/angular": "^1.6.55",
+    "@types/restangular": "^1.5.44",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
   },
   "prettier": {
     "semi": false,
