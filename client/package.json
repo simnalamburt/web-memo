@@ -4,8 +4,8 @@
     "watch": "webpack-cli --mode=development --watch",
     "build": "webpack-cli --mode=production --progress",
     "build:dev": "webpack-cli --mode=development --progress",
-    "prettier": "prettier --check '**/*.{js,ts,scss}'",
-    "prettier:fix": "prettier --write '**/*.{js,ts,scss}'"
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
