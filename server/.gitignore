@@ -1,7 +1,6 @@
 # Dependencies
 /.bundle/lib/
 
-# DB & backups
+# DB
 /db/data.db
 /db/data.db-journal
-/db/backups/
