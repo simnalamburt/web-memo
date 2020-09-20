@@ -6,6 +6,18 @@ Dead-simple memo webapp
 
 &nbsp;
 
+```bash
+# Install dependencies
+yarn
+# Build frontend
+yarn build
+
+# Check types and format
+yarn test
+# Fix format
+yarn fmt
+```
+
 --------
 *web-memo* is primarily distributed under the terms of both the [MIT license]
 and the [Apache License (Version 2.0)]. See [COPYRIGHT] for details.
