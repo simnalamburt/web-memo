@@ -1,8 +1,8 @@
 {
   "license": "(Apache-2.0 OR MIT)",
   "scripts": {
-    "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write ."
+    "test": "tsc && prettier --check .",
+    "fmt": "prettier --write ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",

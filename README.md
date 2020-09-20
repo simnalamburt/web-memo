@@ -6,7 +6,7 @@ Dead-simple memo webapp
 
 ### Prerequisites
 - [Ruby] *≥ 2.2*, [Bundler]
-- [Node.js] *≥ 6.0.0*, [Yarn]
+- [Node.js], [Yarn]
 
 ```bash
 (cd client && yarn && yarn build) && (cd server && bundle && bundle exec run)
@@ -20,11 +20,11 @@ How to build frontend codes:
 ```bash
 cd client/
 
-yarn              # Download dependencies
-yarn build        # Build front-end codes in production mode
+# Install dependencies
+yarn
 
-yarn watch        # Watch for the changes & build front-end
-                  # codes in development mode
+yarn test
+yarn fmt
 ```
 
 Turn on the server:
