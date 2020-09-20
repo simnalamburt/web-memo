@@ -1,6 +1,8 @@
 {
   "license": "(Apache-2.0 OR MIT)",
   "scripts": {
+    "start": "parcel serve src/index.html",
+    "build": "parcel build src/index.html",
     "test": "tsc && prettier --check .",
     "fmt": "prettier --write ."
   },
@@ -13,8 +15,10 @@
     "restangular": "^1.6.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@types/angular": "^1.6.55",
     "@types/restangular": "^1.5.44",
+    "parcel": "nightly",
     "prettier": "^2.1.2",
     "typescript": "^4.0.3"
   },

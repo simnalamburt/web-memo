@@ -4,5 +4,9 @@
 /.pnp.*
 /.vim/
 
+# Parcel 2
+/.parcel-cache/
+/dist/
+
 # Markdowns
 *.md

@@ -9,7 +9,6 @@ import MainController from './main.controller'
 
 // Stylesheets
 import 'normalize.css'
-import './index.scss'
 
 library.add(faTimes, faPencilAlt)
 dom.watch()
