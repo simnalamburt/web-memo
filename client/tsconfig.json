@@ -1,16 +1,25 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "lib": ["ES2017", "Dom.Iterable"],
-    "module": "ES2015",
-    "moduleResolution": "Node",
-    "noEmitOnError": true,
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "noEmit": true,
+    "jsx": "preserve",
+
+    // Strict Typecheck
+    "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "ES3"
+
+    // Module
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Advanced
+    "skipLibCheck": true
   }
 }
