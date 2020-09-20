@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "dependencies": {
+    "fastify": "^3.4.1"
+  },
+  "scripts": {
+    "start": "node ."
+  }
+}
