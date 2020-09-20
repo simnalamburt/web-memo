@@ -5,3 +5,7 @@
 !/.yarn/sdks
 !/.yarn/versions
 /.pnp.*
+
+# Parcel 2
+.parcel-cache/
+dist/

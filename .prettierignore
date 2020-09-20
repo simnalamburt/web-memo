@@ -5,8 +5,8 @@
 /.vim/
 
 # Parcel 2
-/.parcel-cache/
-/dist/
+.parcel-cache/
+dist/
 
 # Markdowns
 *.md
