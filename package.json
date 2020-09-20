@@ -2,6 +2,7 @@
   "workspaces": [
     "client"
   ],
+  "license": "(Apache-2.0 OR MIT)",
   "dependencies": {
     "prettier": "^2.1.2"
   },

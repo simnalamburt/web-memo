@@ -1,5 +1,4 @@
 {
-  "license": "(Apache-2.0 OR MIT)",
   "scripts": {
     "start": "parcel serve src/index.html",
     "build": "parcel build src/index.html",
