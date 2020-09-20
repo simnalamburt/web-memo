@@ -1,0 +1,17 @@
+{
+  "workspaces": [
+    "client"
+  ],
+  "dependencies": {
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "build": "yarn workspaces foreach -pt run build",
+    "test": "yarn workspaces foreach -pt run test && prettier --check .",
+    "fmt": "prettier --write ."
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

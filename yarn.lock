@@ -1313,28 +1313,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:^0.2.27":
-  version: 0.2.27
-  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.27"
-  checksum: 27c2f0e2dedb02e7dc72855e9b14f18988bb59bf826238931a00e2ebed83f2974c5fcad1b828d2ce44e27bb3777bf3c1f413ba4c2c575fa5403b20b1dd49b3ee
+"@fortawesome/fontawesome-common-types@npm:^0.2.30":
+  version: 0.2.30
+  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.30"
+  checksum: 3cfb72b3bc7f6471256bed75c9bfde4f19e5a7956ab01c9022289a3e675e27b8691b8cb7fab63a6725e8e3eab47da975e76b834e4c35d9a8a71d3e7b279cc196
   languageName: node
   linkType: hard
 
 "@fortawesome/fontawesome-svg-core@npm:^1.2.19":
-  version: 1.2.27
-  resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.27"
+  version: 1.2.30
+  resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.30"
   dependencies:
-    "@fortawesome/fontawesome-common-types": ^0.2.27
-  checksum: 9e9218dd5fb67df9c5dba0f4699303a91cdad31f62b4009112d73ebcc47ee60f5512e6e2dd7f8a956b429744bad852726f332904fb901c42f70d82383172b40f
+    "@fortawesome/fontawesome-common-types": ^0.2.30
+  checksum: 56ab4184eca91b013a7d8d804e8efb3ce93969a8514f788ae61412f4040c9263fb72d7e3d5169c310020c44baca6001108f3350244a150e104c6c39fafe09c6f
   languageName: node
   linkType: hard
 
 "@fortawesome/free-solid-svg-icons@npm:^5.9.0":
-  version: 5.12.1
-  resolution: "@fortawesome/free-solid-svg-icons@npm:5.12.1"
+  version: 5.14.0
+  resolution: "@fortawesome/free-solid-svg-icons@npm:5.14.0"
   dependencies:
-    "@fortawesome/fontawesome-common-types": ^0.2.27
-  checksum: ba9c21c9bdbcb9124706cda8eadb5c2d2bf2978209351b4d4d702a51109570f53881cf6d8fba2b99ab7187e63caec7f4aab69f1bf6429965b3bc814de8ec6941
+    "@fortawesome/fontawesome-common-types": ^0.2.30
+  checksum: 304999f6a65d2eea82bf9dcfa1e982765c4f9ab48085b27eee4990e0d13c12147278991ed75905474ae7077283657517243a5ef7dff78336c7e9261b6f68a49b
   languageName: node
   linkType: hard
 
@@ -2316,9 +2316,9 @@ __metadata:
   linkType: hard
 
 "@types/angular@npm:*, @types/angular@npm:^1.6.55":
-  version: 1.6.57
-  resolution: "@types/angular@npm:1.6.57"
-  checksum: e196c1391473b32789f57e5376a356ca304cba3aa17c924d459d49a3957a65e3d9dd9c663adad95ce2203fd431bb1ca3514dc92e4a2a0584a0d8555c8f692b8c
+  version: 1.7.3
+  resolution: "@types/angular@npm:1.7.3"
+  checksum: 018b2b0f18c0cadab31d64e8cb79a9b7eafdb78a9ff2d7b83a2ae211b61c34965d1b17555e3fa7d1efdc917cae28fe0ef3fb6717ff20b8790471ef08415599d5
   languageName: node
   linkType: hard
 
@@ -2344,11 +2344,11 @@ __metadata:
   linkType: hard
 
 "@types/restangular@npm:^1.5.44":
-  version: 1.5.44
-  resolution: "@types/restangular@npm:1.5.44"
+  version: 1.5.45
+  resolution: "@types/restangular@npm:1.5.45"
   dependencies:
     "@types/angular": "*"
-  checksum: b2fc958a2809f4593bc5e4ce55f19be56ddd373e926112053d4c0f636a2c2ce989c6dc03dcd71c99dfc78ae49b2ef8b5ceaeb743918c1aab9f0c812107399541
+  checksum: e5e1b1db3a8e93577ba13549835d9c00bc0f24031bd923a34791491ed5c51cda462c2983d1d2dc4594ca3c7cedc45d5e36bdb1fecf939b2652da1a85aabb07c3
   languageName: node
   linkType: hard
 
@@ -3119,6 +3119,24 @@ __metadata:
   checksum: 2b20f9e353cd34b015ff0067effd2810490c4e23eb9b4edfd7cdc41f00311d0d1a6148eb7e9947d4ab858295f4da5b5d8f150842a8802dc7999c51288fe26e62
   languageName: node
   linkType: hard
+
+"client-85d774@workspace:client":
+  version: 0.0.0-use.local
+  resolution: "client-85d774@workspace:client"
+  dependencies:
+    "@babel/core": ^7.0.0
+    "@fortawesome/fontawesome-svg-core": ^1.2.19
+    "@fortawesome/free-solid-svg-icons": ^5.9.0
+    "@types/angular": ^1.6.55
+    "@types/restangular": ^1.5.44
+    angular: ^1.8.0
+    angular-elastic: ^2.5.1
+    normalize.css: ^8.0.1
+    parcel: nightly
+    restangular: ^1.6.1
+    typescript: ^4.0.3
+  languageName: unknown
+  linkType: soft
 
 "clone@npm:^1.0.2":
   version: 1.0.4
@@ -5598,9 +5616,9 @@ __metadata:
   linkType: hard
 
 "lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:~4.17.0":
-  version: 4.17.19
-  resolution: "lodash@npm:4.17.19"
-  checksum: ff2b7a95f0129dba9101e346d44e0eda0f159d76bbbf23721eec1969b87a32bde3de0cfef0733218c64620e9be08040a973278d46a686540233b356115f3527c
+  version: 4.17.20
+  resolution: "lodash@npm:4.17.20"
+  checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6
   languageName: node
   linkType: hard
 
@@ -7386,18 +7404,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@babel/core": ^7.0.0
-    "@fortawesome/fontawesome-svg-core": ^1.2.19
-    "@fortawesome/free-solid-svg-icons": ^5.9.0
-    "@types/angular": ^1.6.55
-    "@types/restangular": ^1.5.44
-    angular: ^1.8.0
-    angular-elastic: ^2.5.1
-    normalize.css: ^8.0.1
-    parcel: nightly
     prettier: ^2.1.2
-    restangular: ^1.6.1
-    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -7417,17 +7424,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safe-buffer@npm:^5.0.1, safe-buffer@npm:^5.1.0, safe-buffer@npm:^5.1.1, safe-buffer@npm:^5.1.2, safe-buffer@npm:^5.2.0, safe-buffer@npm:~5.2.0":
-  version: 5.2.1
-  resolution: "safe-buffer@npm:5.2.1"
-  checksum: 0bb57f0d8f9d1fa4fe35ad8a2db1f83a027d48f2822d59ede88fd5cd4ddad83c0b497213feb7a70fbf90597a70c5217f735b0eb1850df40ce9b4ae81dd22b3f9
-  languageName: node
-  linkType: hard
-
-"safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
+"safe-buffer@npm:^5.0.1, safe-buffer@npm:^5.1.2, safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
   checksum: 2708587c1b5e70a5e420714ceb59f30f5791c6e831d39812125a008eca63a4ac18578abd020a0776ea497ff03b4543f2b2a223a7b9073bf2d6c7af9ec6829218
+  languageName: node
+  linkType: hard
+
+"safe-buffer@npm:^5.1.0, safe-buffer@npm:^5.1.1, safe-buffer@npm:^5.2.0, safe-buffer@npm:~5.2.0":
+  version: 5.2.1
+  resolution: "safe-buffer@npm:5.2.1"
+  checksum: 0bb57f0d8f9d1fa4fe35ad8a2db1f83a027d48f2822d59ede88fd5cd4ddad83c0b497213feb7a70fbf90597a70c5217f735b0eb1850df40ce9b4ae81dd22b3f9
   languageName: node
   linkType: hard
 

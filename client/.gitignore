@@ -1,11 +1,3 @@
-# Yarn 2
-/.yarn/*
-!/.yarn/releases
-!/.yarn/plugins
-!/.yarn/sdks
-!/.yarn/versions
-/.pnp.*
-
 # Parcel 2
 /.parcel-cache/
 /dist/
