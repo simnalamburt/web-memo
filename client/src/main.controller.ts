@@ -20,7 +20,7 @@ export default function MainController(
 ) {
   const all = Restangular.all('memos')
   const memos = all.getList().$object
-  const select = (i: number) => memos.find(memo => memo.id === i)
+  const select = (i: number) => memos.find((memo) => memo.id === i)
 
   this.memos = memos
 
@@ -32,7 +32,7 @@ export default function MainController(
 
     return all
       .post({ content })
-      .then(id => {
+      .then((id) => {
         this.newContent = ''
 
         const newMemo: Memo = { id, content }
@@ -48,14 +48,14 @@ export default function MainController(
       })
   }
 
-  this.update = i =>
+  this.update = (i) =>
     select(i)
       .put()
       .catch(() => {
         throw Error('unimplemented')
       })
 
-  this.delete = i => {
+  this.delete = (i) => {
     const memo = select(i)
     return memo
       .remove()
