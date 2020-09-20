@@ -33,5 +33,9 @@
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-merge": "^4.2.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
