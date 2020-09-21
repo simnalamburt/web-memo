@@ -18,7 +18,10 @@ export default function MainController(
   this: MainController,
   Restangular: restangular.IService
 ) {
-  const all = Restangular.allUrl('memos', 'http://localhost:9494/')
+  // Use API
+  Restangular.setBaseUrl('http://localhost:9494/')
+
+  const all = Restangular.all('memos')
   const memos = all.getList().$object
   const select = (i: number) => memos.find((memo) => memo.id === i)
 
