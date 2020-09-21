@@ -1,6 +1,8 @@
 const fastify = require('fastify')
+const fastifyCors = require('fastify-cors')
 
 const server = fastify({ logger: true })
+server.register(fastifyCors, { origin: 'http://localhost:8000' })
 
 server.get('/', async (request, reply) => {
   return [
