@@ -55,7 +55,7 @@ textarea {
 #write > textarea::placeholder {
   font-size: 1.8em;
   text-align: center;
-  line-height: 48px;
+  line-height: 36px;
   transition: color 0.2s;
 }
 
@@ -72,7 +72,7 @@ textarea {
   background: none;
   outline: none;
   right: 50px;
-  bottom: 28px;
+  bottom: 21px;
   color: #1abc9c;
 }
 
@@ -90,8 +90,8 @@ textarea {
     width: 1170px;
   }
 
-  column-count: 3;
-  column-gap: 20px;
+  columns: 3 20px;
+  -webkit-columns: 3 20px;
 }
 
 .result-memo {
@@ -114,7 +114,7 @@ textarea {
 .result-memo > a {
   position: absolute;
   top: 2px;
-  right: 2px;
+  right: 3px;
   color: rgba(0, 0, 0, 0.2);
 }
 .result-memo > a:focus,
