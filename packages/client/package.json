@@ -1,8 +1,8 @@
 {
   "name": "client",
   "scripts": {
-    "start": "parcel serve src/index.html",
     "build": "parcel build src/index.html",
+    "dev": "parcel serve src/index.html",
     "test": "tsc"
   },
   "dependencies": {
