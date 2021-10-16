@@ -17,7 +17,7 @@
     "@babel/core": "^7.0.0",
     "@types/angular": "^1.6.55",
     "@types/restangular": "^1.5.44",
-    "parcel": "nightly",
+    "parcel": "^2",
     "typescript": "^4.0.3"
   }
 }
