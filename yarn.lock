@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 6
   cacheKey: 8
 
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4":
@@ -41,29 +41,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.15.8, @babel/core@npm:^7.12.0":
-  version: 7.15.8
-  resolution: "@babel/core@npm:7.15.8"
-  dependencies:
-    "@babel/code-frame": ^7.15.8
-    "@babel/generator": ^7.15.8
-    "@babel/helper-compilation-targets": ^7.15.4
-    "@babel/helper-module-transforms": ^7.15.8
-    "@babel/helpers": ^7.15.4
-    "@babel/parser": ^7.15.8
-    "@babel/template": ^7.15.4
-    "@babel/traverse": ^7.15.4
-    "@babel/types": ^7.15.6
-    convert-source-map: ^1.7.0
-    debug: ^4.1.0
-    gensync: ^1.0.0-beta.2
-    json5: ^2.1.2
-    semver: ^6.3.0
-    source-map: ^0.5.0
-  checksum: 61e5050580a2808344f23161c971e917fe711a546e3afa4d022be4ec5325f8bdf559cc9afd962e39ecc3643d9cdcbbac7abc7b8dd05330020475317564c8d290
-  languageName: node
-  linkType: hard
-
 "@babel/core@npm:^7.0.0":
   version: 7.11.6
   resolution: "@babel/core@npm:7.11.6"
@@ -85,6 +62,29 @@ __metadata:
     semver: ^5.4.1
     source-map: ^0.5.0
   checksum: c046e956f96189dd9c808e6df93ec47923f193aa114788ad218a4905f58a32573519505af7b009efbb84646a569081874b34b04bf50a517fa2ed3203f8f032a6
+  languageName: node
+  linkType: hard
+
+"@babel/core@npm:^7.12.0":
+  version: 7.15.8
+  resolution: "@babel/core@npm:7.15.8"
+  dependencies:
+    "@babel/code-frame": ^7.15.8
+    "@babel/generator": ^7.15.8
+    "@babel/helper-compilation-targets": ^7.15.4
+    "@babel/helper-module-transforms": ^7.15.8
+    "@babel/helpers": ^7.15.4
+    "@babel/parser": ^7.15.8
+    "@babel/template": ^7.15.4
+    "@babel/traverse": ^7.15.4
+    "@babel/types": ^7.15.6
+    convert-source-map: ^1.7.0
+    debug: ^4.1.0
+    gensync: ^1.0.0-beta.2
+    json5: ^2.1.2
+    semver: ^6.3.0
+    source-map: ^0.5.0
+  checksum: 61e5050580a2808344f23161c971e917fe711a546e3afa4d022be4ec5325f8bdf559cc9afd962e39ecc3643d9cdcbbac7abc7b8dd05330020475317564c8d290
   languageName: node
   linkType: hard
 
@@ -693,7 +693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcel/core@npm:2.0.0, @parcel/core@npm:^2.0.0":
+"@parcel/core@npm:^2.0.0":
   version: 2.0.0
   resolution: "@parcel/core@npm:2.0.0"
   dependencies:
@@ -1471,6 +1471,15 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 5ea4faa1fd30712b1d725da65e9612a93e566f40b0125df955c34669c33b81531e053a3c1501966e11217ca6026a0165f970e73c4eb8d3be7a957e4bef4ab67c
+  languageName: node
+  linkType: hard
+
+"acorn@npm:^8.5.0":
+  version: 8.7.1
+  resolution: "acorn@npm:8.7.1"
+  bin:
+    acorn: bin/acorn
+  checksum: aca0aabf98826717920ac2583fdcad0a6fbe4e583fdb6e843af2594e907455aeafe30b1e14f1757cd83ce1776773cf8296ffc3a4acf13f0bd3dfebcf1db6ae80
   languageName: node
   linkType: hard
 
@@ -5809,10 +5818,10 @@ resolve@^1.3.2:
 
 "resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>":
   version: 1.17.0
-  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=07638b"
   dependencies:
     path-parse: ^1.0.6
-  checksum: a3606308046ca75c0a6350c26df636b64a71904a8e00f3181fd838b46b4fc303c32ae3e694c156eae5d9102cbe194c444f85822d8e6ce30cf7c510e412029908
+  checksum: 6fd799f282ddf078c4bc20ce863e3af01fa8cb218f0658d9162c57161a2dbafe092b13015b9a4c58d0e1e801cf7aa7a4f13115fea9db98c3f9a0c43e429bad6f
   languageName: node
   linkType: hard
 
@@ -6584,11 +6593,11 @@ typescript@^4.0.3:
 
 "typescript@patch:typescript@^4.0.3#~builtin<compat/typescript>":
   version: 4.0.3
-  resolution: "typescript@patch:typescript@npm%3A4.0.3#~builtin<compat/typescript>::version=4.0.3&hash=32657b"
+  resolution: "typescript@patch:typescript@npm%3A4.0.3#~builtin<compat/typescript>::version=4.0.3&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 4f122651dbd12ce9246df5ad00b8ed1c9625bce45a0082cc1af07ed79f57a34699bea5065ae9fe8ea0c99cc154c552107bb3922b72866167f406d161585c1af5
+  checksum: e9a1dd789450ce217aef4919de578515d3141d53c98f2eee889fdccb95946b083233f8391aba802aa395bae12a58d0710cd9538d993fd762fd8a7332127f8597
   languageName: node
   linkType: hard
 
