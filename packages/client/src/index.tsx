@@ -28,12 +28,12 @@ function TextArea(props: TextAreaProps) {
   return <textarea rows={1} ref={ref} {...props}></textarea>
 }
 
-type Memo = [key: string, value: string]
+type Memo = [key: number, value: string]
 type Memos = Memo[]
 type Action =
-  | [method: 'POST', key: string, content: string]
-  | [method: 'PUT', key: string, content: string]
-  | [method: 'DELETE', key: string]
+  | [method: 'POST', key: number, content: string]
+  | [method: 'PUT', key: number, content: string]
+  | [method: 'DELETE', key: number]
 
 function reducer(memos: Memos, action: Action): Memos {
   const [method, key, ..._] = action
@@ -65,15 +65,14 @@ function App({ initialMemos }: AppProps) {
     // TODO: Error handling
     const resp = await fetch(`//localhost:9494/memos`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
+      body: content,
     })
-    const key = await resp.text()
+    const key = parseInt(await resp.text())
     dispatch(['POST', key, content])
   }
 
   const handleChange =
-    (key: string) => async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    (key: number) => async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const content = e.target.value
       dispatch(['PUT', key, content])
 
@@ -81,12 +80,11 @@ function App({ initialMemos }: AppProps) {
       // TODO: Too frequent
       await fetch(`//localhost:9494/memos/${key}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content }),
+        body: content,
       })
     }
   const handleDelete =
-    (key: string) => async (_: React.MouseEvent<HTMLAnchorElement>) => {
+    (key: number) => async (_: React.MouseEvent<HTMLAnchorElement>) => {
       dispatch(['DELETE', key])
 
       // TODO: Error handling
@@ -94,7 +92,7 @@ function App({ initialMemos }: AppProps) {
     }
 
   return (
-    <React.StrictMode>
+    <>
       <img src={logo} />
       <form id="write" onSubmit={handleSubmit}>
         <TextArea
@@ -121,19 +119,21 @@ function App({ initialMemos }: AppProps) {
           </div>
         ))}
       </div>
-    </React.StrictMode>
+    </>
   )
 }
 
-// TODO: useSWR
 fetch('//localhost:9494/memos').then(async (resp) => {
-  const data: { id: number; content: string }[] = await resp.json()
-  const memos: Memos = data.map(({ id, content }) => [`${id}`, content])
+  const memos: Memos = await resp.json()
 
   const container = document.getElementById('app')
   if (container == null) {
     throw new Error('Could find "#app" element')
   }
 
-  createRoot(container).render(<App initialMemos={memos} />)
+  createRoot(container).render(
+    <React.StrictMode>
+      <App initialMemos={memos} />
+    </React.StrictMode>
+  )
 })

@@ -16,30 +16,30 @@ const memos = new Map([
   ],
 ])
 
-server.get('/memos', async () =>
-  [...memos.entries()].reverse().map(([id, content]) => ({ id, content }))
-)
+server.get('/memos', async () => [...memos.entries()])
 
 server.post('/memos', async (request, reply) => {
   // Return 400 on empty content
-  if ((request.body.content ?? '').trim() === '') {
+  if ((request.body ?? '').trim() === '') {
     reply.statusCode = 400
     return ''
   }
 
   // Assign ID to the memo and add it to the `memos`
   lastId += 1
-  memos.set(lastId, request.body.content)
+  memos.set(lastId, request.body)
   return lastId
 })
 
 server.put('/memos/:id', async (request) => {
+  // TODO: Check for 404
   const id = request.params.id | 0
-  memos.set(id, request.body.content)
+  memos.set(id, request.body)
   return ''
 })
 
 server.delete('/memos/:id', async (request) => {
+  // TODO: Check for 404
   const id = request.params.id | 0
   memos.delete(id)
   return ''
