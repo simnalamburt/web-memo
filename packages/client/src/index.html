@@ -1,35 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="hyeonme">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Hyeon Kim" />
-    <meta name="title" content="Simple Memo" />
-    <meta name="description" content="간단한 웹기반 메모 서비스" />
-    <title>Memo</title>
-    <link rel="stylesheet" type="text/css" href="./index.css" />
-  </head>
-  <body ng-controller="MainController as main">
-    <img src="./img/logo.png" />
-    <form id="write">
-      <textarea
-        msd-elastic="\n"
-        ng-model="main.newContent"
-        ng-blur="main.create()"
-        placeholder="New Memo"
-      ></textarea>
-      <button type="submit"><i class="fas fa-lg fa-pencil-alt"></i></button>
-    </form>
-    <div id="result" class="conainer">
-      <div class="result-memo" ng-repeat="memo in main.memos track by memo.id">
-        <textarea
-          msd-elastic="\n"
-          ng-model="memo.content"
-          ng-blur="main.update(memo.id)"
-        ></textarea>
-        <a ng-click="main.delete(memo.id)"><i class="fas fa-times"></i></a>
-      </div>
-    </div>
-    <script type="module" src="./index.ts"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Hyeon Kim" />
+  <meta name="title" content="Simple Memo" />
+  <meta name="description" content="간단한 웹기반 메모 서비스" />
+  <title>Memo</title>
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+</head>
+
+<div id="app"></div>
+<script type="module" src="./index.tsx"></script>

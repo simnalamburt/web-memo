@@ -44,7 +44,7 @@ textarea {
 }
 
 #write > textarea {
-  height: 60px;
+  min-height: 60px;
   padding: 12px;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
@@ -59,9 +59,6 @@ textarea {
   transition: color 0.2s;
 }
 
-#write > textarea:focus {
-  min-height: 200px;
-}
 #write > textarea:focus::placeholder {
   color: transparent;
 }

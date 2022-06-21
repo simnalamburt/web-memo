@@ -16,5 +16,8 @@
     "semi": false,
     "singleQuote": true
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
 }

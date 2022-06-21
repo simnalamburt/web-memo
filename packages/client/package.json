@@ -8,15 +8,15 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "angular": "^1.8.0",
-    "angular-elastic": "^2.5.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "normalize.css": "^8.0.1",
-    "restangular": "^1.6.1"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@types/angular": "^1.6.55",
-    "@types/restangular": "^1.5.44",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
     "parcel": "^2",
     "typescript": "^4.0.3"
   }
