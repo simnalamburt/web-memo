@@ -16,6 +16,11 @@ yarn build
 yarn test
 # Fix format
 yarn fmt
+
+# Start server
+yarn workspace server start
+# Start dev server
+yarn workspace client dev
 ```
 
 --------
