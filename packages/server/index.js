@@ -2,7 +2,7 @@ const fastify = require('fastify')
 const fastifyCors = require('fastify-cors')
 
 const server = fastify({ logger: true })
-server.register(fastifyCors, { origin: 'http://localhost:1234' })
+server.register(fastifyCors, { origin: 'http://localhost:3000' })
 
 let lastId = 2
 const memos = new Map([

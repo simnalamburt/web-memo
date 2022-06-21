@@ -1,5 +1,5 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
@@ -7,7 +7,7 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
 import logo from './img/logo.png'
 
 // Stylesheets
-import 'normalize.css'
+import './index.css'
 
 type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   borderwidth: number
@@ -127,12 +127,12 @@ function App({ initialMemos }: AppProps) {
 fetch('//localhost:9494/memos').then(async (resp) => {
   const memos: Memos = await resp.json()
 
-  const container = document.getElementById('app')
+  const container = document.getElementById('root')
   if (container == null) {
     throw new Error('Could find "#app" element')
   }
 
-  createRoot(container).render(
+  ReactDOM.createRoot(container).render(
     <React.StrictMode>
       <App initialMemos={memos} />
     </React.StrictMode>
