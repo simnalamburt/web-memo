@@ -79,19 +79,23 @@ textarea {
 #result {
   margin: 0 auto;
   padding: 0 15px;
+  columns: 3 20px;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  #result {
     width: 750px;
   }
-  @media (min-width: 992px) {
+}
+@media (min-width: 992px) {
+  #result {
     width: 970px;
   }
-  @media (min-width: 1200px) {
+}
+@media (min-width: 1200px) {
+  #result {
     width: 1170px;
   }
-
-  columns: 3 20px;
-  -webkit-columns: 3 20px;
 }
 
 .result-memo {
