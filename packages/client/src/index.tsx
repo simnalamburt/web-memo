@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useRef, useLayoutEffect } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
@@ -13,9 +13,9 @@ type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   borderwidth: number
 }
 function TextArea(props: TextAreaProps) {
-  const ref = useRef<HTMLTextAreaElement>(null)
+  const ref = React.useRef<HTMLTextAreaElement>(null)
 
-  useLayoutEffect(() => {
+  React.useLayoutEffect(() => {
     if (ref.current != null) {
       ref.current.style.height = 'inherit'
       ref.current.style.height = `${
@@ -53,8 +53,8 @@ type AppProps = {
   initialMemos: Memos
 }
 function App({ initialMemos }: AppProps) {
-  const [input, setInput] = useState('')
-  const [memos, dispatch] = useReducer(reducer, initialMemos)
+  const [input, setInput] = React.useState('')
+  const [memos, dispatch] = React.useReducer(reducer, initialMemos)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -93,7 +93,7 @@ function App({ initialMemos }: AppProps) {
 
   return (
     <>
-      <img src={logo} />
+      <img id="logo" src={logo} />
       <form id="write" onSubmit={handleSubmit}>
         <TextArea
           borderwidth={2}
@@ -123,6 +123,7 @@ function App({ initialMemos }: AppProps) {
   )
 }
 
+// TODO: useSWR
 fetch('//localhost:9494/memos').then(async (resp) => {
   const memos: Memos = await resp.json()
 

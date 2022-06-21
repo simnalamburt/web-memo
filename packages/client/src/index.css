@@ -16,9 +16,10 @@ body {
   line-height: 24px;
 }
 
-img {
+#logo {
   display: block;
   width: 500px;
+  height: 83.9px;
   margin: 0 auto;
 }
 
