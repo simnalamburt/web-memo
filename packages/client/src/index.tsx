@@ -9,7 +9,10 @@ import logo from './img/logo.png'
 // Stylesheets
 import 'normalize.css'
 
-function TextArea(props) {
+type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  borderwidth: number
+}
+function TextArea(props: TextAreaProps) {
   const ref = useRef<HTMLTextAreaElement>(null)
 
   useLayoutEffect(() => {
@@ -21,26 +24,24 @@ function TextArea(props) {
     }
   }, [props.value])
 
-  return (
-    <>
-      <textarea rows="1" ref={ref} {...props}></textarea>
-    </>
-  )
+  // TODO: 스크롤 막 변함
+  return <textarea rows={1} ref={ref} {...props}></textarea>
 }
 
 type Memo = [key: string, value: string]
 type Memos = Memo[]
 type Action =
-  [method: 'POST', key: string, content: string] |
-  [method: 'PUT', key: string, content: string] |
-  [method: 'DELETE', key: string]
+  | [method: 'POST', key: string, content: string]
+  | [method: 'PUT', key: string, content: string]
+  | [method: 'DELETE', key: string]
 
-function reducer(memos: Memos, [method, key, ...rest]: Action) {
+function reducer(memos: Memos, action: Action): Memos {
+  const [method, key, ..._] = action
   switch (method) {
     case 'POST':
-      return [...memos, [key, rest[0]]]
+      return [...memos, [key, action[2]]]
     case 'PUT':
-      return memos.map(([k, old]) => [k, k === key ? rest[0] : old])
+      return memos.map(([k, old]) => [k, k === key ? action[2] : old])
     case 'DELETE':
       return memos.filter(([k, _]) => k !== key)
     default:
@@ -49,12 +50,11 @@ function reducer(memos: Memos, [method, key, ...rest]: Action) {
 }
 
 type AppProps = {
-  data: Memos
+  initialMemos: Memos
 }
-function App({ data }) {
-  // TODO: sync with server
+function App({ initialMemos }: AppProps) {
   const [input, setInput] = useState('')
-  const [memos, dispatch] = useReducer<Memos>(reducer, data)
+  const [memos, dispatch] = useReducer(reducer, initialMemos)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -72,24 +72,26 @@ function App({ data }) {
     dispatch(['POST', key, content])
   }
 
-  const handleChange = (key: string) => async (e: React.FormEvent<HTMLTextAreaElement>) => {
-    const content = e.target.value
-    dispatch(['PUT', key, content])
+  const handleChange =
+    (key: string) => async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const content = e.target.value
+      dispatch(['PUT', key, content])
 
-    // TODO: Error handling
-    // TODO: Too frequent
-    await fetch(`//localhost:9494/memos/${key}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
-    })
-  }
-  const handleDelete = (key: string) => async (_) => {
-    dispatch(['DELETE', key])
+      // TODO: Error handling
+      // TODO: Too frequent
+      await fetch(`//localhost:9494/memos/${key}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content }),
+      })
+    }
+  const handleDelete =
+    (key: string) => async (_: React.MouseEvent<HTMLAnchorElement>) => {
+      dispatch(['DELETE', key])
 
-    // TODO: Error handling
-    await fetch(`//localhost:9494/memos/${key}`, { method: 'DELETE' })
-  }
+      // TODO: Error handling
+      await fetch(`//localhost:9494/memos/${key}`, { method: 'DELETE' })
+    }
 
   return (
     <React.StrictMode>
@@ -124,14 +126,14 @@ function App({ data }) {
 }
 
 // TODO: useSWR
-fetch('//localhost:9494/memos').then(async resp => {
-  const data = await resp.json()
+fetch('//localhost:9494/memos').then(async (resp) => {
+  const data: { id: number; content: string }[] = await resp.json()
+  const memos: Memos = data.map(({ id, content }) => [`${id}`, content])
 
   const container = document.getElementById('app')
-  if (container != null) {
-    createRoot(container).render(<App data={data.map(({ id, content }) => [id, content])} />)
-  } else {
-    console.error('Could find "#app" element')
+  if (container == null) {
+    throw new Error('Could find "#app" element')
   }
-})
 
+  createRoot(container).render(<App initialMemos={memos} />)
+})
