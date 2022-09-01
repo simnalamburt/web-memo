@@ -2,7 +2,7 @@ const fastify = require('fastify')
 const fastifyCors = require('fastify-cors')
 
 const server = fastify({ logger: true })
-server.register(fastifyCors, { origin: 'http://localhost:3000' })
+server.register(fastifyCors, { origin: 'http://localhost:5173' })
 
 // TODO: Use SQLite3
 let lastId = 2
