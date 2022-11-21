@@ -1,7 +1,7 @@
 {
   "name": "server",
   "dependencies": {
-    "fastify": "^3.4.1",
+    "fastify": "^3.29.4",
     "fastify-cors": "^4.1.0"
   },
   "scripts": {
