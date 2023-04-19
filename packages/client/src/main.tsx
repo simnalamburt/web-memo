@@ -101,7 +101,7 @@ function App({ initialMemos }: AppProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit">
+        <button type="submit" disabled={input === ''}>
           <Icon icon={faPencilAlt} size="lg" />
         </button>
       </form>

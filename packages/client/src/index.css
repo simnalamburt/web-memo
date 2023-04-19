@@ -72,6 +72,10 @@ textarea {
   right: 50px;
   bottom: 21px;
   color: #1abc9c;
+  transition: color 0.3s;
+}
+#write > button[type='submit']:disabled {
+  color: #ccc;
 }
 
 #result {
