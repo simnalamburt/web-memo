@@ -1,124 +1,135 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
+import React from 'react'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
+
+type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  borderwidth: number
+}
+function TextArea(props: TextAreaProps) {
+  const ref = React.useRef<HTMLTextAreaElement>(null)
+
+  React.useLayoutEffect(() => {
+    if (ref.current != null) {
+      ref.current.style.height = 'inherit'
+      ref.current.style.height = `${
+        ref.current.scrollHeight + props.borderwidth * 2
+      }px`
+    }
+  }, [props.value])
+
+  // TODO: 스크롤 막 변함
+  return <textarea rows={1} ref={ref} {...props}></textarea>
+}
+
+type Memo = [key: number, value: string]
+type Memos = Memo[]
+type Action =
+  | [method: 'POST', key: number, content: string]
+  | [method: 'PUT', key: number, content: string]
+  | [method: 'DELETE', key: number]
+
+function reducer(memos: Memos, action: Action): Memos {
+  const [method, key, ..._] = action
+  switch (method) {
+    case 'POST':
+      return [...memos, [key, action[2]]]
+    case 'PUT':
+      return memos.map(([k, old]) => [k, k === key ? action[2] : old])
+    case 'DELETE':
+      return memos.filter(([k, _]) => k !== key)
+    default:
+      throw new Error()
+  }
+}
+
+type AppProps = {
+  initialMemos: Memos
+}
+function App({ initialMemos }: AppProps) {
+  const [input, setInput] = React.useState('')
+  const [memos, dispatch] = React.useReducer(reducer, initialMemos)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const content = input
+    setInput('')
+
+    // TODO: Error handling
+    const resp = await fetch(`//localhost:9494/memos`, {
+      method: 'POST',
+      body: content,
+    })
+    const key = parseInt(await resp.text())
+    dispatch(['POST', key, content])
+  }
+
+  const handleChange =
+    (key: number) => async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const content = e.target.value
+      dispatch(['PUT', key, content])
+
+      // TODO: Error handling
+      // TODO: Too frequent
+      await fetch(`//localhost:9494/memos/${key}`, {
+        method: 'PUT',
+        body: content,
+      })
+    }
+  const handleDelete =
+    (key: number) => async (_: React.MouseEvent<HTMLAnchorElement>) => {
+      dispatch(['DELETE', key])
+
+      // TODO: Error handling
+      await fetch(`//localhost:9494/memos/${key}`, { method: 'DELETE' })
+    }
+
+  return (
+    <>
+      <img id="logo" src="/logo.png" />
+      <form id="write" onSubmit={handleSubmit}>
+        <TextArea
+          borderwidth={2}
+          placeholder="New Memo"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit" disabled={input === ''}>
+          <Icon icon={faPencilAlt} size="lg" />
+        </button>
+      </form>
+      <div id="result" className="conainer">
+        {memos.map(([key, content]) => (
+          <div key={key} className="result-memo">
+            <TextArea
+              borderwidth={8}
+              value={content}
+              onChange={handleChange(key)}
+            />
+            <a onClick={handleDelete(key)}>
+              <Icon icon={faTimes} />
+            </a>
+          </div>
+        ))}
+      </div>
+    </>
+  )
+}
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+  const [memos, setMemos] = React.useState<Memos | null>(null)
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+  React.useEffect(() => {
+    fetch('//localhost:9494/memos')
+      .then(res => res.json())
+      .then(data => setMemos(data))
+  }, [])
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+  // TODO: Proper loading screen
+  if (!memos) return <img id="logo" src="/logo.png" />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+  return <App initialMemos={memos} />
 }
