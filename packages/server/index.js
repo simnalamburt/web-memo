@@ -1,5 +1,5 @@
 const fastify = require('fastify')
-const fastifyCors = require('fastify-cors')
+const fastifyCors = require('@fastify/cors')
 
 const server = fastify({ logger: true })
 server.register(fastifyCors, { origin: 'http://localhost:5173' })

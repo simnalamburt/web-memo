@@ -1,8 +1,8 @@
 {
   "name": "server",
   "dependencies": {
-    "fastify": "^3.29.4",
-    "fastify-cors": "^4.1.0"
+    "@fastify/cors": "^8.2.1",
+    "fastify": "^4.15.0"
   },
   "scripts": {
     "start": "node ."
