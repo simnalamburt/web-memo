@@ -5247,6 +5247,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web-memo@workspace:packages/web-memo"
   dependencies:
+    "@fortawesome/fontawesome-svg-core": ^6.4.0
+    "@fortawesome/free-solid-svg-icons": ^6.4.0
+    "@fortawesome/react-fontawesome": ^0.2.0
     "@types/node": 18.15.11
     "@types/react": 18.0.37
     "@types/react-dom": 18.0.11
