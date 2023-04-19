@@ -1,7 +1,9 @@
-# Yarn 2
+/node_modules/
+/packages/*/node_modules/
+
+# Yarn berry
 /.yarn/*
 !/.yarn/releases
 !/.yarn/plugins
 !/.yarn/sdks
 !/.yarn/versions
-/.pnp.*
