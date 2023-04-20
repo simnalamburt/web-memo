@@ -1,5 +1,5 @@
+# Node dependencies
 /node_modules/
-/packages/*/node_modules/
 
 # Yarn berry
 /.yarn/*
@@ -7,3 +7,10 @@
 !/.yarn/plugins
 !/.yarn/sdks
 !/.yarn/versions
+
+# next.js
+/.next/
+# local env files
+.env*.local
+# typescript
+next-env.d.ts

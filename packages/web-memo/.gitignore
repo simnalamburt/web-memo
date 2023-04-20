@@ -1,6 +1,0 @@
-# next.js
-/.next/
-# local env files
-.env*.local
-# typescript
-next-env.d.ts

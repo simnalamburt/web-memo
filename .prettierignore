@@ -3,7 +3,7 @@
 /.yarn/
 
 # Nextjs
-/packages/web-memo/.next/
+/.next/
 
 # Markdowns
 *.md

@@ -31,9 +31,8 @@ It has been used as my personal TodoMVC-like demo app.
 yarn
 # Fix format
 yarn fmt
-
-cd packages/web-memo
-# ...
+# Run dev server
+yarn dev
 ```
 
 --------
