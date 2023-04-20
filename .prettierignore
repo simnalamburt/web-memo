@@ -1,9 +1,4 @@
-# Yarn 2
-/.yarnrc.yml
-/.yarn/
-
 # Nextjs
 /.next/
-
 # Markdowns
 *.md

@@ -28,11 +28,11 @@ It has been used as my personal TodoMVC-like demo app.
 
 ```bash
 # Install dependencies
-yarn
+pnpm
 # Fix format
-yarn fmt
+pnpm fmt
 # Run dev server
-yarn dev
+pnpm dev
 ```
 
 --------
