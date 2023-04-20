@@ -1,15 +1,9 @@
 {
-  "workspaces": [
-    "packages/*"
-  ],
   "license": "(Apache-2.0 OR MIT)",
   "dependencies": {
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.4"
+    "prettier": "^2.8.7"
   },
   "scripts": {
-    "build": "yarn workspaces foreach -pt run build",
-    "test": "yarn workspaces foreach -pt run test && prettier --check .",
     "fmt": "prettier --write ."
   },
   "prettier": {

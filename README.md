@@ -29,18 +29,11 @@ It has been used as my personal TodoMVC-like demo app.
 ```bash
 # Install dependencies
 yarn
-# Build frontend
-yarn build
-
-# Check types and format
-yarn test
 # Fix format
 yarn fmt
 
-# Start server
-yarn workspace server start
-# Start dev server
-yarn workspace client dev
+cd packages/web-memo
+# ...
 ```
 
 --------

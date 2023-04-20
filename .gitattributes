@@ -3,4 +3,3 @@
 /.yarn/cache/**    linguist-vendored
 /.yarn/sdks/**     binary linguist-generated
 /.yarn/pnpify/**   binary linguist-generated
-/.pnp.js           binary linguist-generated
