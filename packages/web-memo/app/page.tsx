@@ -124,8 +124,8 @@ export default function Home() {
 
   React.useEffect(() => {
     fetch('/memos')
-      .then(res => res.json())
-      .then(data => setMemos(data))
+      .then((res) => res.json())
+      .then((data) => setMemos(data))
   }, [])
 
   // TODO: Proper loading screen

@@ -2,5 +2,8 @@
 /.yarnrc.yml
 /.yarn/
 
+# Nextjs
+/packages/web-memo/.next/
+
 # Markdowns
 *.md

@@ -1,6 +1,9 @@
 import * as db from '@/lib/db'
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
   // TODO: Check for 404
   const id = parseInt(params.id)
   const body = await request.text()
@@ -8,7 +11,10 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   return new Response('')
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
   // TODO: Check for 404
   const id = parseInt(params.id)
   db.deleteMemo(id)
