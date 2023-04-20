@@ -12,7 +12,7 @@ const memos = new Map([
 ])
 
 export function getMemos() {
-  return [...memos.entries()]
+  return Array.from(memos.entries())
 }
 
 export function createMemo(content: string) {
