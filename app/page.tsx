@@ -1,9 +1,16 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
+
+function Logo() {
+  return (
+    <Image id="logo" src="/logo.png" alt="Logo" width={500} height={83.9} />
+  )
+}
 
 type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   borderwidth: number
@@ -89,7 +96,7 @@ function App({ initialMemos }: AppProps) {
 
   return (
     <>
-      <img id="logo" src="/logo.png" />
+      <Logo />
       <form id="write" onSubmit={handleSubmit}>
         <TextArea
           borderwidth={2}
@@ -129,7 +136,7 @@ export default function Home() {
   }, [])
 
   // TODO: Proper loading screen
-  if (!memos) return <img id="logo" src="/logo.png" />
+  if (!memos) return <Logo />
 
   return <App initialMemos={memos} />
 }
