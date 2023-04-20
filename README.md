@@ -14,6 +14,7 @@ It has been used as my personal TodoMVC-like demo app.
 - 2020-09-28 [`edb36862`] fastify RESTful server, yarn berry, parcel v2 (nightly), TypeScript, prettier, angularjs v1, restangualr
 - 2021-10-17 [`3f19d35a`] fastify RESTful server, yarn v3, parcel v2, TypeScript, prettier, angularjs v1, restangualr
 - 2022-07-22 [`413b5d75`] fastify RESTful server, yarn v3, vite, TypeScript, prettier, React v18
+- 2023-04-20 [`ae44ba9c`] Next.js v13 with app directory layout, pnpm, TypeScript, prettier, React v18
 
 [`2ee0e700`]: https://github.com/simnalamburt/web-memo/tree/2ee0e700
 [`59c9883f`]: https://github.com/simnalamburt/web-memo/tree/59c9883f
@@ -23,6 +24,7 @@ It has been used as my personal TodoMVC-like demo app.
 [`edb36862`]: https://github.com/simnalamburt/web-memo/tree/edb36862
 [`3f19d35a`]: https://github.com/simnalamburt/web-memo/tree/3f19d35a
 [`413b5d75`]: https://github.com/simnalamburt/web-memo/tree/413b5d75
+[`ae44ba9c`]: https://github.com/simnalamburt/web-memo/tree/ae44ba9c
 
 &nbsp;
 
