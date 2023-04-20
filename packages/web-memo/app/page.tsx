@@ -59,7 +59,7 @@ function App({ initialMemos }: AppProps) {
     setInput('')
 
     // TODO: Error handling
-    const resp = await fetch(`//localhost:9494/memos`, {
+    const resp = await fetch(`/memos`, {
       method: 'POST',
       body: content,
     })
@@ -74,7 +74,7 @@ function App({ initialMemos }: AppProps) {
 
       // TODO: Error handling
       // TODO: Too frequent
-      await fetch(`//localhost:9494/memos/${key}`, {
+      await fetch(`/memos/${key}`, {
         method: 'PUT',
         body: content,
       })
@@ -84,7 +84,7 @@ function App({ initialMemos }: AppProps) {
       dispatch(['DELETE', key])
 
       // TODO: Error handling
-      await fetch(`//localhost:9494/memos/${key}`, { method: 'DELETE' })
+      await fetch(`/memos/${key}`, { method: 'DELETE' })
     }
 
   return (
@@ -123,7 +123,7 @@ export default function Home() {
   const [memos, setMemos] = React.useState<Memos | null>(null)
 
   React.useEffect(() => {
-    fetch('//localhost:9494/memos')
+    fetch('/memos')
       .then(res => res.json())
       .then(data => setMemos(data))
   }, [])
