@@ -25,7 +25,7 @@ function TextArea(props: TextAreaProps) {
         ref.current.scrollHeight + props.borderwidth * 2
       }px`
     }
-  }, [props.value])
+  }, [props.value, props.borderwidth])
 
   // TODO: 스크롤 막 변함
   return <textarea rows={1} ref={ref} {...props}></textarea>
