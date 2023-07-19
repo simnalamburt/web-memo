@@ -30,7 +30,7 @@ It has been used as my personal TodoMVC-like demo app.
 
 ```bash
 # Install dependencies
-pnpm
+pnpm i
 # Fix format
 pnpm fmt
 # Run dev server
