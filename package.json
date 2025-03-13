@@ -12,7 +12,6 @@
     "eslint-config-next": "^13.4.10",
     "next": "^14.1.1",
     "postcss": "^8.4.31",
-    "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.6",
@@ -23,11 +22,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "fmt": "prettier --write ."
+    "test": "next lint && biome check",
+    "fix": "biome check --fix"
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
   }
 }

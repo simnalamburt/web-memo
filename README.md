@@ -31,8 +31,8 @@ It has been used as my personal TodoMVC-like demo app.
 ```bash
 # Install dependencies
 pnpm i
-# Fix format
-pnpm fmt
+# Fix formatting and auto-fixable linting errors
+pnpm fix
 # Run dev server
 pnpm dev
 ```

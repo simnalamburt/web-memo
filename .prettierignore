@@ -1,7 +1,0 @@
-# pnpm
-/pnpm-lock.yaml
-# next.js
-/.next/
-
-# Markdowns
-*.md
