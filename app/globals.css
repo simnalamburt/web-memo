@@ -10,7 +10,7 @@
 
 html {
   min-height: 100vh;
-  background: url('/bkground.jpg') center/cover fixed;
+  background: url("/bkground.jpg") center / cover fixed;
 }
 
 body {
@@ -55,9 +55,7 @@ textarea {
   border-radius: 7px;
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
 
-  transition:
-    height 0.2s,
-    min-height 0.2s;
+  transition: height 0.2s, min-height 0.2s;
 }
 #write > textarea::placeholder {
   font-size: 1.8em;
@@ -70,7 +68,7 @@ textarea {
   color: transparent;
 }
 
-#write > button[type='submit'] {
+#write > button[type="submit"] {
   position: absolute;
   border: none;
   background: none;
@@ -80,7 +78,7 @@ textarea {
   color: #1abc9c;
   transition: color 0.3s;
 }
-#write > button[type='submit']:disabled {
+#write > button[type="submit"]:disabled {
   color: #ccc;
 }
 
@@ -117,10 +115,7 @@ textarea {
   border: 8px solid transparent;
   padding: 4px;
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
-  transition:
-    height 0.2s,
-    min-height 0.2s,
-    border-color 0.2s;
+  transition: height 0.2s, min-height 0.2s, border-color 0.2s;
 }
 .result-memo > textarea:focus {
   border-color: rgba(0, 0, 0, 0.05);

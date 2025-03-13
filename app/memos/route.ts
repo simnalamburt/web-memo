@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server'
 import * as db from '@/lib/db'
+import { NextResponse } from 'next/server'
 
 export async function GET() {
   return NextResponse.json(db.getMemos())

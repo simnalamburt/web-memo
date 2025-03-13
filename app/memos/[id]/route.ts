@@ -5,7 +5,7 @@ export async function PUT(
   { params }: { params: { id: string } },
 ) {
   // TODO: Check for 404
-  const id = parseInt(params.id)
+  const id = Number.parseInt(params.id)
   const body = await request.text()
   db.updateMemo(id, body)
   return new Response('')
@@ -16,7 +16,7 @@ export async function DELETE(
   { params }: { params: { id: string } },
 ) {
   // TODO: Check for 404
-  const id = parseInt(params.id)
+  const id = Number.parseInt(params.id)
   db.deleteMemo(id)
   return new Response('')
 }

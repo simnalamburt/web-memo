@@ -1,10 +1,10 @@
 'use client'
 
-import React from 'react'
-import Image from 'next/image'
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
+import React from 'react'
 
 function Logo() {
   return (
@@ -18,6 +18,7 @@ type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 function TextArea(props: TextAreaProps) {
   const ref = React.useRef<HTMLTextAreaElement>(null)
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: It does depend on props.value
   React.useLayoutEffect(() => {
     if (ref.current != null) {
       ref.current.style.height = 'inherit'
@@ -28,7 +29,7 @@ function TextArea(props: TextAreaProps) {
   }, [props.value, props.borderwidth])
 
   // TODO: 스크롤 막 변함
-  return <textarea rows={1} ref={ref} {...props}></textarea>
+  return <textarea rows={1} ref={ref} {...props} />
 }
 
 type Memo = [key: number, value: string]
@@ -66,11 +67,11 @@ function App({ initialMemos }: AppProps) {
     setInput('')
 
     // TODO: Error handling
-    const resp = await fetch(`/memos`, {
+    const resp = await fetch('/memos', {
       method: 'POST',
       body: content,
     })
-    const key = parseInt(await resp.text())
+    const key = Number.parseInt(await resp.text())
     dispatch(['POST', key, content])
   }
 
@@ -116,6 +117,7 @@ function App({ initialMemos }: AppProps) {
               value={content}
               onChange={handleChange(key)}
             />
+            {/* biome-ignore lint/a11y/useValidAnchor: TODO Use button instead of anchor */}
             <a onClick={handleDelete(key)}>
               <Icon icon={faTimes} />
             </a>
