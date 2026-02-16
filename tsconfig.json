@@ -1,20 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "allowSyntheticDefaultImports": true,
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strict": true,
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
     "noEmit": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    // Strict Typecheck
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    // Module
+    "module": "preserve",
+    "verbatimModuleSyntax": true,
+
+    // JSX
     "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "types": ["vite/client"]
+    "jsxImportSource": "solid-js"
   },
-  "include": ["src", "app.config.ts"],
-  "exclude": ["node_modules", ".output", ".vinxi"]
+  "exclude": ["dist"]
 }

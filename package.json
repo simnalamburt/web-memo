@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "vinxi build",
-    "ci": "echo 'TODO: tsc' && oxlint && oxfmt --check",
+    "ci": "tsc && oxlint && oxfmt --check",
     "dev": "vinxi dev",
     "fix": "oxlint --fix",
     "fmt": "oxfmt",
