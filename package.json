@@ -2,9 +2,9 @@
   "license": "(Apache-2.0 OR MIT)",
   "scripts": {
     "build": "next build",
-    "ci": "echo 'TODO: tsc && oxlint' && oxfmt --check",
+    "ci": "echo 'TODO: tsc' && oxlint && oxfmt --check",
     "dev": "next dev",
-    "fix": "echo 'TODO: oxlint --fix'",
+    "fix": "oxlint --fix",
     "fmt": "oxfmt",
     "start": "next start"
   },
@@ -25,7 +25,8 @@
     "typescript": "^5.1.6"
   },
   "devDependencies": {
-    "oxfmt": "^0.33.0"
+    "oxfmt": "^0.33.0",
+    "oxlint": "^1.48.0"
   },
   "packageManager": "pnpm@10.29.3"
 }
