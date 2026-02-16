@@ -1,5 +1,5 @@
-web-memo
-========
+# web-memo
+
 Dead-simple memo webapp
 
 ![Screenshot]
@@ -37,8 +37,9 @@ pnpm fix
 pnpm dev
 ```
 
---------
-*web-memo* is primarily distributed under the terms of both the [Apache License (Version 2.0)] and the [MIT license]. See [COPYRIGHT] for details.
+---
+
+_web-memo_ is primarily distributed under the terms of both the [Apache License (Version 2.0)] and the [MIT license]. See [COPYRIGHT] for details.
 
 [Screenshot]: https://raw.githubusercontent.com/simnalamburt/i/master/web-memo/screenshot.jpg
 [Apache License (Version 2.0)]: LICENSE-APACHE
