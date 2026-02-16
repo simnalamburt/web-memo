@@ -1,9 +1,9 @@
 # Node dependencies
 /node_modules/
-# next.js
-/.next/
+# solidstart
+/.vinxi/
+/.output/
+/dist/
 
 # local env files
 .env*.local
-# typescript
-next-env.d.ts
