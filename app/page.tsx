@@ -18,7 +18,6 @@ type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 function TextArea(props: TextAreaProps) {
   const ref = React.useRef<HTMLTextAreaElement>(null)
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: It does depend on props.value
   React.useLayoutEffect(() => {
     if (ref.current != null) {
       ref.current.style.height = 'inherit'
@@ -117,7 +116,6 @@ function App({ initialMemos }: AppProps) {
               value={content}
               onChange={handleChange(key)}
             />
-            {/* biome-ignore lint/a11y/useValidAnchor: TODO Use button instead of anchor */}
             <a onClick={handleDelete(key)}>
               <Icon icon={faTimes} />
             </a>
