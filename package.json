@@ -22,7 +22,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "next lint && biome check",
+    "ci": "next lint && biome check",
     "fix": "biome check --fix"
   },
   "devDependencies": {
