@@ -2,5 +2,6 @@ ignoredBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
 overrides:
+  h3: 1.15.5
   vite: npm:rolldown-vite@latest
   vinxi>vite: npm:rolldown-vite@latest
