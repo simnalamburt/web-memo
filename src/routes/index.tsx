@@ -115,7 +115,7 @@ export default function Home() {
           <form class="relative mx-auto mt-10 mb-20 max-w-[600px] px-5" onSubmit={handleSubmit}>
             <TextArea
               borderwidth={2}
-              class="min-h-[60px] rounded-[7px] border-2 border-black/10 p-3 shadow-[5px_5px_0_rgba(0,0,0,0.1)] transition-[height,min-height] duration-200 placeholder:text-center placeholder:text-[1.8em] placeholder:leading-9 placeholder:transition-colors focus:placeholder:text-transparent"
+              class="min-h-[60px] rounded-[7px] border-2 border-black/10 p-3 shadow-[5px_5px_0_rgba(0,0,0,0.1)] transition-[height,min-height] duration-200 placeholder:text-center placeholder:text-[1.8em]/9 placeholder:transition-colors focus:placeholder:text-transparent"
               placeholder="New Memo"
               value={input()}
               onInput={(e) => setInput(e.currentTarget.value)}
@@ -135,7 +135,7 @@ export default function Home() {
                 <div class="relative inline-block w-full">
                   <TextArea
                     borderwidth={8}
-                    class="my-[5px] border-[8px] border-transparent p-1 shadow-[0_3px_0_rgba(0,0,0,0.08)] transition-[height,min-height,border-color] duration-200 focus:border-black/5"
+                    class="my-[5px] border-8 border-transparent p-1 shadow-[0_3px_0_rgba(0,0,0,0.08)] transition-[height,min-height,border-color] duration-200 focus:border-black/5"
                     value={content}
                     onInput={handleChange(key)}
                   />

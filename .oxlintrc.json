@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  // TODO: Add "eslint-plugin-better-tailwindcss"
-  "jsPlugins": ["eslint-plugin-solid"],
+  "jsPlugins": ["eslint-plugin-solid", "eslint-plugin-better-tailwindcss"],
   // NOTE: Replace the rules below with an "extends" directive once
   // https://github.com/oxc-project/oxc/issues/15538 is resolved
   "rules": {
@@ -26,6 +25,20 @@
     "solid/self-closing-comp": "error",
     "solid/style-prop": "error",
     "solid/prefer-classlist": "warn",
-    "solid/prefer-show": "warn"
+    "solid/prefer-show": "warn",
+
+    //
+    // eslint-plugin-better-tailwindcss
+    //
+    "better-tailwindcss/enforce-canonical-classes": "warn",
+    "better-tailwindcss/no-conflicting-classes": "error",
+    "better-tailwindcss/no-deprecated-classes": "warn",
+    "better-tailwindcss/no-duplicate-classes": "warn",
+    "better-tailwindcss/no-unknown-classes": "error"
+  },
+  "settings": {
+    "better-tailwindcss": {
+      "entryPoint": "./src/app.css"
+    }
   }
 }
