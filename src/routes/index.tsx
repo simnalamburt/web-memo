@@ -1,7 +1,13 @@
 import type { JSX } from "solid-js";
 import { For, Show, createEffect, createSignal, onMount, splitProps } from "solid-js";
+import { createStore, produce } from "solid-js/store";
 
-type Memo = [key: number, value: string];
+type Memo = {
+  key: number;
+  content: string;
+};
+
+type MemoTuple = [key: number, value: string];
 
 type TextAreaProps = JSX.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   borderwidth: number;
@@ -50,12 +56,14 @@ function TextArea(props: TextAreaProps) {
 
 export default function Home() {
   const [input, setInput] = createSignal("");
-  const [memos, setMemos] = createSignal<Memo[] | null>(null);
+  const [memos, setMemos] = createStore<Memo[]>([]);
+  const [loaded, setLoaded] = createSignal(false);
 
   onMount(async () => {
     const res = await fetch("/memos");
-    const data = (await res.json()) as Memo[];
-    setMemos(data);
+    const data = (await res.json()) as MemoTuple[];
+    setMemos(data.map(([key, content]) => ({ key, content })));
+    setLoaded(true);
   });
 
   const handleSubmit: JSX.EventHandler<HTMLFormElement, SubmitEvent> = async (e) => {
@@ -75,19 +83,24 @@ export default function Home() {
     }
 
     const key = Number.parseInt(await resp.text(), 10);
-    setMemos((prev) => (prev ? [...prev, [key, content]] : prev));
+    setMemos(
+      produce((prev) => {
+        prev.push({ key, content });
+      }),
+    );
   };
 
   const handleChange =
     (key: number): JSX.EventHandler<HTMLTextAreaElement, InputEvent> =>
     async (e) => {
       const content = e.currentTarget.value;
-      setMemos((prev) =>
-        prev
-          ? prev.map(([k, old]) =>
-              k === key ? ([k, content] satisfies Memo) : ([k, old] satisfies Memo),
-            )
-          : prev,
+      setMemos(
+        produce((prev) => {
+          const memo = prev.find((item) => item.key === key);
+          if (memo) {
+            memo.content = content;
+          }
+        }),
       );
 
       // TODO: Error handling
@@ -101,58 +114,63 @@ export default function Home() {
   const handleDelete =
     (key: number): JSX.EventHandler<HTMLButtonElement, MouseEvent> =>
     async () => {
-      setMemos((prev) => (prev ? prev.filter(([k]) => k !== key) : prev));
+      setMemos(
+        produce((prev) => {
+          const index = prev.findIndex((item) => item.key === key);
+          if (index !== -1) {
+            prev.splice(index, 1);
+          }
+        }),
+      );
 
       // TODO: Error handling
       await fetch(`/memos/${key}`, { method: "DELETE" });
     };
 
   return (
-    <Show when={memos()} fallback={<Logo />}>
-      {(loadedMemos) => (
-        <>
-          <Logo />
-          <form class="relative mx-auto mt-10 mb-20 max-w-[600px] px-5" onSubmit={handleSubmit}>
-            <TextArea
-              borderwidth={2}
-              class="min-h-[60px] rounded-[7px] border-2 border-black/10 p-3 shadow-[5px_5px_0_rgba(0,0,0,0.1)] transition-[height,min-height] duration-200 placeholder:text-center placeholder:text-[1.8em]/9 placeholder:transition-colors focus:placeholder:text-transparent"
-              placeholder="New Memo"
-              value={input()}
-              onInput={(e) => setInput(e.currentTarget.value)}
-            />
-            <button
-              type="submit"
-              class="absolute right-[50px] bottom-[21px] cursor-pointer border-0 bg-transparent text-[1.3em] text-[#1abc9c] transition-colors duration-300 disabled:cursor-default disabled:text-[#ccc]"
-              disabled={input() === ""}
-              aria-label="Create memo"
-            >
-              &#9998;
-            </button>
-          </form>
-          <div class="mx-auto columns-[3_20px] px-[15px] md:w-[750px] lg:w-[970px] xl:w-[1170px]">
-            <For each={loadedMemos()}>
-              {([key, content]) => (
-                <div class="relative inline-block w-full">
-                  <TextArea
-                    borderwidth={8}
-                    class="my-[5px] border-8 border-transparent p-1 shadow-[0_3px_0_rgba(0,0,0,0.08)] transition-[height,min-height,border-color] duration-200 focus:border-black/5"
-                    value={content}
-                    onInput={handleChange(key)}
-                  />
-                  <button
-                    type="button"
-                    class="absolute top-[2px] right-[3px] cursor-pointer border-0 bg-transparent text-black/20 transition-colors hover:text-black/50 focus:text-black/50"
-                    onClick={handleDelete(key)}
-                    aria-label="Delete memo"
-                  >
-                    &times;
-                  </button>
-                </div>
-              )}
-            </For>
-          </div>
-        </>
-      )}
+    <Show when={loaded()} fallback={<Logo />}>
+      <>
+        <Logo />
+        <form class="relative mx-auto mt-10 mb-20 max-w-[600px] px-5" onSubmit={handleSubmit}>
+          <TextArea
+            borderwidth={2}
+            class="min-h-[60px] rounded-[7px] border-2 border-black/10 p-3 shadow-[5px_5px_0_rgba(0,0,0,0.1)] transition-[height,min-height] duration-200 placeholder:text-center placeholder:text-[1.8em]/9 placeholder:transition-colors focus:placeholder:text-transparent"
+            placeholder="New Memo"
+            value={input()}
+            onInput={(e) => setInput(e.currentTarget.value)}
+          />
+          <button
+            type="submit"
+            class="absolute right-[50px] bottom-[21px] cursor-pointer border-0 bg-transparent text-[1.3em] text-[#1abc9c] transition-colors duration-300 disabled:cursor-default disabled:text-[#ccc]"
+            disabled={input() === ""}
+            aria-label="Create memo"
+          >
+            &#9998;
+          </button>
+        </form>
+        <div class="mx-auto columns-[3_20px] px-[15px] md:w-[750px] lg:w-[970px] xl:w-[1170px]">
+          <For each={memos}>
+            {(memo) => (
+              <div class="relative inline-block w-full">
+                <TextArea
+                  borderwidth={8}
+                  class="my-[5px] border-8 border-transparent p-1 shadow-[0_3px_0_rgba(0,0,0,0.08)] transition-[height,min-height,border-color] duration-200 focus:border-black/5"
+                  value={memo.content}
+                  onInput={handleChange(memo.key)}
+                />
+                <button
+                  type="button"
+                  class="absolute top-[2px] right-[3px] cursor-pointer border-0 bg-transparent text-black/20 transition-colors hover:text-black/50 focus:text-black/50"
+                  onClick={handleDelete(memo.key)}
+                  aria-label="Delete memo"
+                >
+                  &times;
+                </button>
+              </div>
+            )}
+          </For>
+        </div>
+      </>
     </Show>
   );
 }
