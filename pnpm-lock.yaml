@@ -1894,8 +1894,8 @@ packages:
     resolution: {integrity: sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==}
     engines: {node: '>=8'}
 
-  defu@6.1.4:
-    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+  defu@6.1.6:
+    resolution: {integrity: sha512-f8mefEW4WIVg4LckePx3mALjQSPQgFlg9U8yaPdlsbdYcHQyj9n2zL2LJEA52smeYxOvmd/nB7TpMtHGMTHcug==}
 
   denque@2.1.0:
     resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
@@ -4553,7 +4553,7 @@ snapshots:
       '@vinxi/plugin-directives': 0.5.1(vinxi@0.5.11(@types/node@25.2.3)(db0@0.3.4)(ioredis@5.9.3)(jiti@2.6.1)(rolldown@1.0.0-beta.53)(terser@5.46.0))
       '@vinxi/server-components': 0.5.1(vinxi@0.5.11(@types/node@25.2.3)(db0@0.3.4)(ioredis@5.9.3)(jiti@2.6.1)(rolldown@1.0.0-beta.53)(terser@5.46.0))
       cookie-es: 2.0.0
-      defu: 6.1.4
+      defu: 6.1.6
       error-stack-parser: 2.1.4
       html-to-image: 1.11.13
       radix3: 1.1.2
@@ -4819,7 +4819,7 @@ snapshots:
       citty: 0.1.6
       clipboardy: 4.0.0
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.6
       get-port-please: 3.2.0
       h3: 1.15.5
       http-shutdown: 1.2.2
@@ -5043,7 +5043,7 @@ snapshots:
     dependencies:
       chokidar: 5.0.0
       confbox: 0.2.4
-      defu: 6.1.4
+      defu: 6.1.6
       dotenv: 17.3.1
       exsolve: 1.0.8
       giget: 2.0.0
@@ -5187,7 +5187,7 @@ snapshots:
 
   define-lazy-prop@2.0.0: {}
 
-  defu@6.1.4: {}
+  defu@6.1.6: {}
 
   denque@2.1.0: {}
 
@@ -5524,7 +5524,7 @@ snapshots:
     dependencies:
       citty: 0.1.6
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.6
       node-fetch-native: 1.6.7
       nypm: 0.6.5
       pathe: 2.0.3
@@ -5573,7 +5573,7 @@ snapshots:
     dependencies:
       cookie-es: 1.2.2
       crossws: 0.3.5
-      defu: 6.1.4
+      defu: 6.1.6
       destr: 2.0.5
       iron-webcrypto: 1.2.1
       node-mock-http: 1.0.4
@@ -5896,7 +5896,7 @@ snapshots:
       clipboardy: 4.0.0
       consola: 3.4.2
       crossws: 0.3.5
-      defu: 6.1.4
+      defu: 6.1.6
       get-port-please: 3.2.0
       h3: 1.15.5
       http-shutdown: 1.2.2
@@ -6070,7 +6070,7 @@ snapshots:
       croner: 9.1.0
       crossws: 0.3.5
       db0: 0.3.4
-      defu: 6.1.4
+      defu: 6.1.6
       destr: 2.0.5
       dot-prop: 10.1.0
       esbuild: 0.27.3
@@ -6361,7 +6361,7 @@ snapshots:
 
   rc9@2.1.2:
     dependencies:
-      defu: 6.1.4
+      defu: 6.1.6
       destr: 2.0.5
 
   readable-stream@2.3.8:
@@ -6567,7 +6567,7 @@ snapshots:
 
   serve-placeholder@2.0.2:
     dependencies:
-      defu: 6.1.4
+      defu: 6.1.6
 
   serve-static@1.16.3:
     dependencies:
@@ -6843,7 +6843,7 @@ snapshots:
   unenv@1.10.0:
     dependencies:
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.6
       mime: 3.0.0
       node-fetch-native: 1.6.7
       pathe: 1.1.2
@@ -6929,7 +6929,7 @@ snapshots:
   untyped@2.0.0:
     dependencies:
       citty: 0.1.6
-      defu: 6.1.4
+      defu: 6.1.6
       jiti: 2.6.1
       knitwork: 1.3.0
       scule: 1.3.0
@@ -6984,7 +6984,7 @@ snapshots:
       consola: 3.4.2
       crossws: 0.3.5
       dax-sh: 0.43.2
-      defu: 6.1.4
+      defu: 6.1.6
       es-module-lexer: 1.7.0
       esbuild: 0.25.12
       get-port-please: 3.2.0
