@@ -28,5 +28,5 @@
     "vite": "npm:rolldown-vite@^7.3.1",
     "vite-plugin-solid": "^2.11.10"
   },
-  "packageManager": "pnpm@10.29.3"
+  "packageManager": "pnpm@11.7.0"
 }
