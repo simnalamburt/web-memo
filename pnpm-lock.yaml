@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@solidjs/start@2.0.0-alpha.3>vite': ^8.0.16
+  '@solidjs/vite-plugin-nitro-2@0.1.0>vite': ^8.0.16
+
 importers:
 
   .:
@@ -1287,12 +1291,12 @@ packages:
     resolution: {integrity: sha512-xMGtkiN4FrXOaWEcnTfuwHhf9t+hS+L5MnRt8JzVlmTIAFiOvAZQReAtgUaVxirXuBf7V+jP1DMzshlQOKzjQw==}
     engines: {node: '>=22'}
     peerDependencies:
-      vite: ^7
+      vite: ^8.0.16
 
   '@solidjs/vite-plugin-nitro-2@0.1.0':
     resolution: {integrity: sha512-gtT9GYhAdbfY2v3ISKYFXclxH/kK+mDhp5ENjiA1zJAfQq6XPWwIfIYm9MB73vfOp+MzVXWDHxYyUv+5pTpGTw==}
     peerDependencies:
-      vite: ^7
+      vite: ^8.0.16
 
   '@speed-highlight/core@1.2.17':
     resolution: {integrity: sha512-Z92FwKpCtfaW1V0jTU/fh3QzYEZN8wDwrzRIBoADCJfn4mJCNcJN/XegifX7BDrQ8/h9Xh/JnbyMchL0FqXrkg==}

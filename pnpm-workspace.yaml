@@ -1,3 +1,6 @@
+overrides:
+  '@solidjs/start@2.0.0-alpha.3>vite': ^8.0.16
+  '@solidjs/vite-plugin-nitro-2@0.1.0>vite': ^8.0.16
 allowBuilds:
   '@parcel/watcher': false
   esbuild: false
