@@ -1,7 +1,7 @@
 # Node dependencies
 /node_modules/
 # solidstart
-/.vinxi/
+/.nitro/
 /.output/
 /dist/
 
