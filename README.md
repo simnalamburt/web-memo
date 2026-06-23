@@ -16,6 +16,7 @@ It has been used as my personal TodoMVC-like demo app.
 - 2022-07-22 [`413b5d75`] fastify RESTful server, yarn v3, vite, TypeScript, prettier, React v18
 - 2023-04-20 [`ae44ba9c`] Next.js v13 with app directory layout, pnpm, TypeScript, prettier, React v18
 - 2026-02-17 [`a520d294`] SolidStart, pnpm, TypeScript, tailwind, oxlint, oxfmt
+- 2026-06-16 [`c9a04849`] SolidStart v2, pnpm v11, TypeScript v6, tailwind, oxlint, oxfmt
 
 [`2ee0e700`]: https://github.com/simnalamburt/web-memo/tree/2ee0e700
 [`59c9883f`]: https://github.com/simnalamburt/web-memo/tree/59c9883f
@@ -27,6 +28,7 @@ It has been used as my personal TodoMVC-like demo app.
 [`413b5d75`]: https://github.com/simnalamburt/web-memo/tree/413b5d75
 [`ae44ba9c`]: https://github.com/simnalamburt/web-memo/tree/ae44ba9c
 [`a520d294`]: https://github.com/simnalamburt/web-memo/tree/a520d294
+[`c9a04849`]: https://github.com/simnalamburt/web-memo/tree/c9a04849
 
 &nbsp;
 
