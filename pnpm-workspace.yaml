@@ -1,4 +1,6 @@
 overrides:
+  '@solidjs/start@2.0.0-alpha.3>esbuild': 0.28.1
+  '@solidjs/start@2.0.0-alpha.3>h3': 2.0.1-rc.22
   '@solidjs/start@2.0.0-alpha.3>vite': ^8.0.16
   '@solidjs/vite-plugin-nitro-2@0.1.0>vite': ^8.0.16
 allowBuilds:
