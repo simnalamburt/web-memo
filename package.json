@@ -18,15 +18,15 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.1",
-    "@types/node": "^25.9.3",
+    "@types/node": "^26",
     "eslint-plugin-better-tailwindcss": "^4.6.0",
     "eslint-plugin-solid": "^0.14.5",
-    "oxfmt": "^0.54.0",
-    "oxlint": "^1.69.0",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3",
-    "vite": "^8.0.16",
+    "vite": "^8.1.0",
     "vite-plugin-solid": "^2.11.12"
   },
-  "packageManager": "pnpm@11.8.0"
+  "packageManager": "pnpm@11.9.0"
 }
