@@ -11,22 +11,22 @@
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.16.1",
+    "@solidjs/router": "^0.16.3",
     "@solidjs/start": "2.0.0-alpha.3",
     "@solidjs/vite-plugin-nitro-2": "^0.1.0",
-    "solid-js": "^1.9.13"
+    "solid-js": "^1.9.14"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.1",
-    "@types/node": "^26",
-    "eslint-plugin-better-tailwindcss": "^4.6.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.1.2",
+    "eslint-plugin-better-tailwindcss": "^4.7.0",
     "eslint-plugin-solid": "^0.14.5",
     "oxfmt": "^0.56.0",
-    "oxlint": "^1.71.0",
-    "tailwindcss": "^4.3.1",
+    "oxlint": "^1.76.0",
+    "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
-    "vite": "^8.1.0",
-    "vite-plugin-solid": "^2.11.12"
+    "vite": "^8.1.5",
+    "vite-plugin-solid": "^2.11.14"
   },
   "packageManager": "pnpm@11.18.0"
 }
