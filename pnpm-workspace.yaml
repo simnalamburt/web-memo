@@ -20,3 +20,8 @@ peerDependencyRules:
     "@typescript-eslint/tsconfig-utils>typescript": "7"
     "@typescript-eslint/typescript-estree>typescript": "7"
     "@typescript-eslint/utils>typescript": "7"
+
+# TODO: Remove this exception after the CVE-2026-14257 patch releases have
+# aged past the supply-chain minimum release age.
+minimumReleaseAgeExclude:
+  - brace-expansion@1.1.18 || 2.1.4 || 5.0.9
